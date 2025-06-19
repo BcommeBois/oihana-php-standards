@@ -207,26 +207,6 @@ class MeasureSymbol
     // =====================================================================
 
     /**
-     * Returns the UnitCode definition (name, unitCode and unitText) of the specific symbol
-     * or null if the symbol is not valid.
-     * @param string $symbol
-     * @return ?PropertyValue
-     */
-    public static function get( string $symbol ): ?PropertyValue
-    {
-        if( self::isValid( $symbol ) )
-        {
-            return new PropertyValue
-            ([
-                Prop::NAME       => self::getName( $symbol ) ,
-                Prop::UNIT_CODE  => self::getCode( $symbol ) ,
-                Prop::UNIT_TEXT  => $symbol ,
-            ] );
-        }
-        return null ;
-    }
-
-    /**
      * Returns the official UN/CEFACT code for a given symbol.
      * @param string $symbol
      * @return string|null The UN/CEFACT code (e.g., 'P1') or null if not found.
@@ -273,4 +253,23 @@ class MeasureSymbol
         return static::$NAMES[ self::getConstant( $code ) ] ?? null;
     }
 
+    /**
+     * Returns the UnitCode definition (name, unitCode and unitText) of the specific symbol
+     * or null if the symbol is not valid.
+     * @param string $symbol
+     * @return ?PropertyValue
+     */
+    public static function getPropertyValue( string $symbol ): ?PropertyValue
+    {
+        if( self::isValid( $symbol ) )
+        {
+            return new PropertyValue
+            ([
+                Prop::NAME       => self::getName( $symbol ) ,
+                Prop::UNIT_CODE  => self::getCode( $symbol ) ,
+                Prop::UNIT_TEXT  => $symbol ,
+            ] );
+        }
+        return null ;
+    }
 }

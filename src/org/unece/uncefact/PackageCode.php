@@ -612,25 +612,6 @@ class PackageCode
     // Methods
     // =====================================================================
 
-
-    /**
-     * Returns the definition (name and unitCode) of the specific package code.
-     * or null if the code is not valid.
-     * @param string $code
-     * @return ?PropertyValue
-     */
-    public static function get( string $code ): ?PropertyValue
-    {
-        if( self::isValid( $code ) )
-        {
-            return new PropertyValue
-            ([
-                Prop::NAME      => self::getName( $code ) ,
-                Prop::UNIT_CODE => $code ,
-            ] );
-        }
-        return null ;
-    }
     /**
      * Returns the code with a specific package code name.
      * @param string $name
@@ -653,5 +634,24 @@ class PackageCode
             static::$NAMES = PackageName::getAll() ;
         }
         return static::$NAMES[ self::getConstant( $code ) ] ?? null;
+    }
+
+    /**
+     * Returns the definition (name and unitCode) of the specific package code.
+     * or null if the code is not valid.
+     * @param string $code
+     * @return ?PropertyValue
+     */
+    public static function getPropertyValue( string $code ): ?PropertyValue
+    {
+        if( self::isValid( $code ) )
+        {
+            return new PropertyValue
+            ([
+                Prop::NAME      => self::getName( $code ) ,
+                Prop::UNIT_CODE => $code ,
+            ] );
+        }
+        return null ;
     }
 }

@@ -612,24 +612,6 @@ class PackageName
     // Methods
     // =====================================================================
 
-    /**
-     * Returns the package definition (name, unitCode) of the specific name
-     * or null if the name is not valid.
-     * @param string $name The name of the unit.
-     * @return ?PropertyValue
-     */
-    public static function get( string $name ): ?PropertyValue
-    {
-        if( self::isValid( $name ) )
-        {
-            return new PropertyValue
-            ([
-                Prop::NAME       => $name ,
-                Prop::UNIT_CODE  => self::getCode( $name ) ,
-            ] );
-        }
-        return null ;
-    }
 
     /**
      * Returns the name with a specific unit code.
@@ -653,5 +635,24 @@ class PackageName
             static::$CODES = PackageCode::getAll() ;
         }
         return static::$CODES[ self::getConstant( $name ) ] ?? null;
+    }
+
+    /**
+     * Returns the package definition (name, unitCode) of the specific name
+     * or null if the name is not valid.
+     * @param string $name The name of the unit.
+     * @return ?PropertyValue
+     */
+    public static function getPropertyValue( string $name ): ?PropertyValue
+    {
+        if( self::isValid( $name ) )
+        {
+            return new PropertyValue
+            ([
+                Prop::NAME       => $name ,
+                Prop::UNIT_CODE  => self::getCode( $name ) ,
+            ] );
+        }
+        return null ;
     }
 }

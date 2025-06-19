@@ -208,26 +208,6 @@ class MeasureName
     // =====================================================================
 
     /**
-     * Returns the UnitCode definition (name, unitCode and unitText) of the specific name
-     * or null if the name is not valid.
-     * @param string $name The name of the unit.
-     * @return ?PropertyValue
-     */
-    public static function get( string $name ): ?PropertyValue
-    {
-        if( self::isValid( $name ) )
-        {
-            return new PropertyValue
-            ([
-                Prop::NAME       => $name ,
-                Prop::UNIT_CODE  => self::getCode( $name ) ,
-                Prop::UNIT_TEXT  => self::getSymbol( $name ) ,
-            ] );
-        }
-        return null ;
-    }
-
-    /**
      * Returns the official UN/CEFACT code for a given code.
      * @param string $name
      * @return string|null The UN/CEFACT code or null if not found.
@@ -259,6 +239,26 @@ class MeasureName
     public static function getFromSymbol( string $symbol ): ?string
     {
         return MeasureSymbol::getName( $symbol ) ;
+    }
+
+    /**
+     * Returns the UnitCode definition (name, unitCode and unitText) of the specific name
+     * or null if the name is not valid.
+     * @param string $name The name of the unit.
+     * @return ?PropertyValue
+     */
+    public static function getPropertyValue( string $name ): ?PropertyValue
+    {
+        if( self::isValid( $name ) )
+        {
+            return new PropertyValue
+            ([
+                Prop::NAME       => $name ,
+                Prop::UNIT_CODE  => self::getCode( $name ) ,
+                Prop::UNIT_TEXT  => self::getSymbol( $name ) ,
+            ] );
+        }
+        return null ;
     }
 
     /**
