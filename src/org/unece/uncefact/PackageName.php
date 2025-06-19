@@ -3,8 +3,6 @@
 namespace org\unece\uncefact;
 
 use oihana\reflections\traits\ConstantsTrait;
-use org\schema\constants\properties\Prop;
-use org\schema\PropertyValue;
 
 /**
  * UN/CEFACT Package names (Recommendation 21).
@@ -612,7 +610,6 @@ class PackageName
     // Methods
     // =====================================================================
 
-
     /**
      * Returns the name with a specific unit code.
      * @param string $code
@@ -635,24 +632,5 @@ class PackageName
             static::$CODES = PackageCode::getAll() ;
         }
         return static::$CODES[ self::getConstant( $name ) ] ?? null;
-    }
-
-    /**
-     * Returns the package definition (name, unitCode) of the specific name
-     * or null if the name is not valid.
-     * @param string $name The name of the unit.
-     * @return ?PropertyValue
-     */
-    public static function getPropertyValue( string $name ): ?PropertyValue
-    {
-        if( self::isValid( $name ) )
-        {
-            return new PropertyValue
-            ([
-                Prop::NAME       => $name ,
-                Prop::UNIT_CODE  => self::getCode( $name ) ,
-            ] );
-        }
-        return null ;
     }
 }

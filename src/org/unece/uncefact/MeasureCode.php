@@ -3,8 +3,6 @@
 namespace org\unece\uncefact;
 
 use oihana\reflections\traits\ConstantsTrait;
-use org\schema\constants\properties\Prop;
-use org\schema\PropertyValue;
 
 /**
  * UN/CEFACT Unit of Measure Codes Enumeration Class (Recommendation 20).
@@ -240,26 +238,6 @@ class MeasureCode
             static::$NAMES = MeasureName::getAll() ;
         }
         return static::$NAMES[ self::getConstant( $code ) ] ?? null;
-    }
-
-    /**
-     * Returns the UnitCode definition (name, unitCode and unitText) of the specific code
-     * or null if the code is not valid.
-     * @param string $code
-     * @return ?PropertyValue
-     */
-    public static function getPropertyValue( string $code ): ?PropertyValue
-    {
-        if( self::isValid( $code ) )
-        {
-            return new PropertyValue
-            ([
-                Prop::NAME       => self::getName( $code ) ,
-                Prop::UNIT_CODE  => $code ,
-                Prop::UNIT_TEXT  => self::getSymbol( $code ) ,
-            ] );
-        }
-        return null ;
     }
 
     /**

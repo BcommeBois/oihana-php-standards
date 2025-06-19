@@ -3,8 +3,6 @@
 namespace org\unece\uncefact;
 
 use oihana\reflections\traits\ConstantsTrait;
-use org\schema\constants\properties\Prop;
-use org\schema\PropertyValue;
 
 /**
  * UN/CEFACT Unit of Measure Names, Symbols, and Codes Class (Recommendation 20).
@@ -239,26 +237,6 @@ class MeasureName
     public static function getFromSymbol( string $symbol ): ?string
     {
         return MeasureSymbol::getName( $symbol ) ;
-    }
-
-    /**
-     * Returns the UnitCode definition (name, unitCode and unitText) of the specific name
-     * or null if the name is not valid.
-     * @param string $name The name of the unit.
-     * @return ?PropertyValue
-     */
-    public static function getPropertyValue( string $name ): ?PropertyValue
-    {
-        if( self::isValid( $name ) )
-        {
-            return new PropertyValue
-            ([
-                Prop::NAME       => $name ,
-                Prop::UNIT_CODE  => self::getCode( $name ) ,
-                Prop::UNIT_TEXT  => self::getSymbol( $name ) ,
-            ] );
-        }
-        return null ;
     }
 
     /**
