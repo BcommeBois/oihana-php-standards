@@ -209,26 +209,6 @@ class MeasureCode
     // =====================================================================
 
     /**
-     * Returns the UnitCode definition (name, unitCode and unitText) of the specific code
-     * or null if the code is not valid.
-     * @param string $code
-     * @return ?PropertyValue
-     */
-    public static function get( string $code ): ?PropertyValue
-    {
-        if( self::isValid( $code ) )
-        {
-            return new PropertyValue
-            ([
-                Prop::NAME       => self::getName( $code ) ,
-                Prop::UNIT_CODE  => $code ,
-                Prop::UNIT_TEXT  => self::getSymbol( $code ) ,
-            ] );
-        }
-        return null ;
-    }
-
-    /**
      * Returns the code with a specific unit code name.
      * @param string $name
      * @return string|null
@@ -260,6 +240,26 @@ class MeasureCode
             static::$NAMES = MeasureName::getAll() ;
         }
         return static::$NAMES[ self::getConstant( $code ) ] ?? null;
+    }
+
+    /**
+     * Returns the UnitCode definition (name, unitCode and unitText) of the specific code
+     * or null if the code is not valid.
+     * @param string $code
+     * @return ?PropertyValue
+     */
+    public static function getPropertyValue( string $code ): ?PropertyValue
+    {
+        if( self::isValid( $code ) )
+        {
+            return new PropertyValue
+            ([
+                Prop::NAME       => self::getName( $code ) ,
+                Prop::UNIT_CODE  => $code ,
+                Prop::UNIT_TEXT  => self::getSymbol( $code ) ,
+            ] );
+        }
+        return null ;
     }
 
     /**
