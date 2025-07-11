@@ -16,7 +16,10 @@ use oihana\reflections\traits\ConstantsTrait;
  */
 class PackageName
 {
-    use ConstantsTrait ;
+    use ConstantsTrait
+    {
+        resetCaches as internalResetCaches ;
+    }
 
     /**
      * A flexible container made of paper, plastic, or woven material, used for holding various goods (fr -> Sac, Sachet).
@@ -632,5 +635,15 @@ class PackageName
             static::$CODES = PackageCode::getAll() ;
         }
         return static::$CODES[ self::getConstant( $name ) ] ?? null;
+    }
+
+    /**
+     * Reset the internal cache of the static methods.
+     * @return void
+     */
+    public static function resetCaches(): void
+    {
+        static::internalResetCaches();
+        static::$CODES = null ;
     }
 }

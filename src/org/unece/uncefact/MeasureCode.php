@@ -25,7 +25,10 @@ use oihana\reflections\traits\ConstantsTrait;
  */
 class MeasureCode
 {
-    use ConstantsTrait ;
+    use ConstantsTrait
+    {
+        resetCaches as internalResetCaches ;
+    }
 
     // =====================================================================
     // Quantity Units (Unités de quantité)
@@ -252,5 +255,16 @@ class MeasureCode
             static::$SYMBOLS = MeasureSymbol::getAll() ;
         }
         return static::$SYMBOLS[ self::getConstant( $code ) ] ?? null;
+    }
+
+    /**
+     * Reset the internal cache of the static methods.
+     * @return void
+     */
+    public static function resetCaches(): void
+    {
+        static::internalResetCaches();
+        static::$NAMES = null ;
+        static::$SYMBOLS = null ;
     }
 }
