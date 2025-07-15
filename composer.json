@@ -27,6 +27,7 @@
     "require": {
         "php": ">=8.4",
         "oihana/php-core": "dev-main",
+        "oihana/php-system": "dev-main",
         "oihana/php-schema": "dev-main"
     },
     "scripts": {
