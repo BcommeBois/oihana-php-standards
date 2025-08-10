@@ -32,8 +32,7 @@
     },
     "require": {
         "php": ">=8.4",
-        "oihana/php-core": "dev-main",
-        "oihana/php-system": "dev-main"
+        "oihana/php-core": "dev-main"
     },
     "scripts": {
         "test": "./vendor/bin/phpunit"
