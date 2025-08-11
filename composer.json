@@ -4,7 +4,7 @@
     "description" : "The Oihana PHP Standards library" ,
     "keywords" : [ "php" , "iso" , "uncefact" , "unm49" ] ,
     "homepage" : "https://github.com/BcommeBois/oihana-php-schema" ,
-    "license" : [ "MPL-2.0" ] ,
+    "license" : "MPL-2.0" ,
     "authors" : [
         {
             "name" : "Marc Alcaraz" ,
