@@ -2,12 +2,13 @@
 
 ![Oihana PHP System](https://raw.githubusercontent.com/BcommeBois/oihana-php-standards/main/assets/images/oihana-php-standards-logo-inline-512x160.png)
 
+**Oihana PHP – Standards** is a library of **constants**, **enumerations**, and **helpers** based on major international standards (ISO, UN, UN/CEFACT, etc.).  
+
+It is designed for **strong typing**, **validation**, and **easy lookups** in your PHP applications.
+
 [![Latest Version](https://img.shields.io/packagist/v/oihana/php-standards.svg?style=flat-square)](https://packagist.org/packages/oihana/php-standards)  
 [![Total Downloads](https://img.shields.io/packagist/dt/oihana/php-standards.svg?style=flat-square)](https://packagist.org/packages/oihana/php-standards)  
 [![License](https://img.shields.io/packagist/l/oihana/php-standards.svg?style=flat-square)](LICENSE)
-
-**Oihana PHP – Standards** is a library of **constants**, **enumerations**, and **helpers** based on major international standards (ISO, UN, UN/CEFACT, etc.).  
-It is designed for **strong typing**, **validation**, and **easy lookups** in your PHP applications.
 
 ---
 
