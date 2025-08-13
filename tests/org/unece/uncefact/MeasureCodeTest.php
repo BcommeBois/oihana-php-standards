@@ -1,7 +1,8 @@
 <?php
 
-namespace org\unece\uncefact;
+namespace tests\org\unece\uncefact;
 
+use org\unece\uncefact\MeasureCode;
 use PHPUnit\Framework\TestCase;
 
 class MeasureCodeTest extends TestCase

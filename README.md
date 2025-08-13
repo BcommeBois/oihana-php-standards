@@ -145,6 +145,6 @@ $fr = UNM49::FRA; // 'FRA'
 ---
 
 ## 👤 Author
-**Marc ALCARAZ** (aka *eKameleon*)  
-📧 [marc@ooop.fr](mailto:marc@ooop.fr)  
-🌐 [http://www.ooop.fr](http://www.ooop.fr)
+- **Marc ALCARAZ** (aka *eKameleon*)  
+- 📧 [marc@ooop.fr](mailto:marc@ooop.fr)  
+- 🌐 [http://www.ooop.fr](http://www.ooop.fr)

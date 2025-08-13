@@ -2,7 +2,7 @@
 
 namespace org\iso;
 
-use oihana\reflections\traits\ConstantsTrait;
+use oihana\reflect\traits\ConstantsTrait;
 
 /**
  * Class ISO4217

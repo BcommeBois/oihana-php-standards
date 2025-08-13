@@ -1,7 +1,10 @@
 <?php
 
-namespace org\unece\uncefact;
+namespace tests\org\unece\uncefact;
 
+use org\unece\uncefact\MeasureCode;
+use org\unece\uncefact\MeasureName;
+use org\unece\uncefact\MeasureSymbol;
 use PHPUnit\Framework\TestCase;
 
 class MeasureSymbolTest extends TestCase

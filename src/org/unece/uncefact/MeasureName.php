@@ -2,7 +2,7 @@
 
 namespace org\unece\uncefact;
 
-use oihana\reflections\traits\ConstantsTrait;
+use oihana\reflect\traits\ConstantsTrait;
 
 /**
  * UN/CEFACT Unit of Measure Names, Symbols, and Codes Class (Recommendation 20).

@@ -2,7 +2,7 @@
 
 namespace org\unstats;
 
-use oihana\reflections\traits\ConstantsTrait;
+use oihana\reflect\traits\ConstantsTrait;
 
 /**
  * Class UNM49

@@ -2,7 +2,7 @@
 
 namespace org\unece\uncefact;
 
-use oihana\reflections\traits\ConstantsTrait;
+use oihana\reflect\traits\ConstantsTrait;
 
 /**
  * UN/CEFACT Package names (Recommendation 21).

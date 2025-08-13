@@ -27,12 +27,13 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "org\\unece\\uncefact\\": "tests/org/unece/uncefact"
+            "tests\\": "tests"
         }
     },
     "require": {
         "php": ">=8.4",
-        "oihana/php-core": "dev-main"
+        "oihana/php-core": "dev-main",
+        "oihana/php-reflect": "dev-main"
     },
     "scripts": {
         "test": "./vendor/bin/phpunit"
