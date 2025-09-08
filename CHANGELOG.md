@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Fixed
+- Fix the PackageCode::ROLL value.
+- Fix the PackageCode::PLATES value.
+
 ## [1.0.0] - 2025-08-13
 
 ### Added

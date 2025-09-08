@@ -500,7 +500,7 @@ class PackageCode
     /**
      * A set of transport plate. (fr -> Plaque de transport)
      */
-    public const string PLATES = 'PZ';
+    public const string PLATES = 'PY';
 
     /**
      * A small bag or flexible container,
@@ -528,7 +528,7 @@ class PackageCode
      * A cylindrical object formed by winding a flexible material,
      * or the material itself in this form (fr -> Rouleau, Bobine).
      */
-    public const string ROLL = 'RD';
+    public const string ROLL = 'RO';
 
     /**
      * A thin, straight bar or stick, often metal (fr -> Tige).
