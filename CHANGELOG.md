@@ -6,9 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Added
+- Adds the iso 3166-1 alpha 2 standard constants.
+
 ### Fixed
 - Fix the PackageCode::ROLL value.
 - Fix the PackageCode::PLATES value.
+- Rename the ISO639_1 class (use the '_' separator)
 
 ## [1.0.0] - 2025-08-13
 

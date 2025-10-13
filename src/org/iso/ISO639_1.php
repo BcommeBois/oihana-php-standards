@@ -23,7 +23,7 @@ use oihana\reflect\traits\ConstantsTrait;
  * @see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes ISO 639-1 code list on Wikipedia
  * @see https://www.loc.gov/standards/iso639-2/php/code_list.php Official Library of Congress list
  */
-class ISO6391
+class ISO639_1
 {
     use ConstantsTrait;
 

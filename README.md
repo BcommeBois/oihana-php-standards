@@ -54,17 +54,18 @@ composer require oihana/php-standards
 
 ## 📚 Available Enumerations
 
-| Class                                      | Description | Example |
-|--------------------------------------------|-------------|---------|
-| `org\iso\ISO4217`                           | ISO 4217 currency codes (alpha-3) | `ISO4217::USD // 'USD'` |
-| `org\iso\ISO6391`                           | ISO 639-1 language codes (alpha-2) | `ISO6391::EN // 'en'` |
-| `org\iso\ISO15924`                          | ISO 15924 script codes | `ISO15924::LATN // 'Latn'` |
-| `org\unstats\UNM49`                         | UN M49 country/area codes (alpha-3) | `UNM49::FRA // 'FRA'` |
-| `org\unece\uncefact\MeasureCode`            | UN/CEFACT Rec. 20 unit codes | `MeasureCode::KILOGRAM // 'KGM'` |
-| `org\unece\uncefact\MeasureName`            | UN/CEFACT unit names | `MeasureName::KILOGRAM // 'Kilogram'` |
-| `org\unece\uncefact\MeasureSymbol`          | UN/CEFACT unit symbols | `MeasureSymbol::KILOGRAM // 'kg'` |
-| `org\unece\uncefact\PackageCode`            | UN/CEFACT Rec. 21 package type codes | `PackageCode::BOX // 'BX'` |
-| `org\unece\uncefact\PackageName`            | UN/CEFACT package type names | `PackageName::BOX // 'Box'` |
+| Class                              | Description | Example                               |
+|------------------------------------|-------------|---------------------------------------|
+| `org\iso\ISO4217`                  | ISO 4217 currency codes (alpha-3) | `ISO4217::USD // 'USD'`               |
+| `org\iso\ISO639_1`                 | ISO 639-1 language codes (alpha-2) | `ISO639_1::EN // 'en'`                |
+| `org\iso\ISO15924`                 | ISO 15924 script codes | `ISO15924::LATN // 'Latn'`            |
+| `org\iso\ISO3166_1`                | ISO 3166-1 country codes (alpha-2) | `ISO3166_1::FR // 'FR'`               |
+| `org\unstats\UNM49`                | UN M49 country/area codes (alpha-3) | `UNM49::FRA // 'FRA'`                 |
+| `org\unece\uncefact\MeasureCode`   | UN/CEFACT Rec. 20 unit codes | `MeasureCode::KILOGRAM // 'KGM'`      |
+| `org\unece\uncefact\MeasureName`   | UN/CEFACT unit names | `MeasureName::KILOGRAM // 'Kilogram'` |
+| `org\unece\uncefact\MeasureSymbol` | UN/CEFACT unit symbols | `MeasureSymbol::KILOGRAM // 'kg'`     |
+| `org\unece\uncefact\PackageCode`   | UN/CEFACT Rec. 21 package type codes | `PackageCode::BOX // 'BX'`            |
+| `org\unece\uncefact\PackageName`   | UN/CEFACT package type names | `PackageName::BOX // 'Box'`           |
 
 ---
 
@@ -89,10 +90,10 @@ All constant classes use `oihana\reflections\traits\ConstantsTrait`, which provi
 ### Basic Enum Access
 ```php
 use org\iso\ISO4217;
-use org\iso\ISO6391;
+use org\iso\ISO639_1;
 
 $usd = ISO4217::USD; // 'USD'
-$en  = ISO6391::EN;  // 'en'
+$en  = ISO639_1::EN;  // 'en'
 ```
 
 ### Validation & Listing
@@ -128,6 +129,15 @@ use org\unece\uncefact\PackageName;
 $bx   = PackageCode::BOX;            // 'BX'
 $name = PackageCode::getName($bx);   // 'Box'
 $code = PackageName::getCode('Box'); // 'BX'
+```
+
+### ISO 3166-1 Country Codes
+```php
+use org\iso\ISO3166_1;
+
+$fr = ISO3166_1::FR;        // 'FR'
+ISO3166_1::validate('US');  // OK
+$all = ISO3166_1::getAll(); // ['FR' => 'FR', ...]
 ```
 
 ### UN M49 Country Codes
