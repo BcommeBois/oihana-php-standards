@@ -147,6 +147,57 @@ use org\unstats\UNM49;
 $fr = UNM49::FRA; // 'FRA'
 ```
 
+### Utility: ISO 8601 Durations
+
+The `Iso8601Duration` class (PHP 8.4+) provides robust handling of duration strings using property hooks.
+
+```php
+use org\iso\Iso8601Duration;
+use DateTime;
+
+// 1. Create a duration
+$duration = new Iso8601Duration('P1M5D'); // 1 Month and 5 Days
+
+// 2. Use helper methods to add/subtract
+$date = new DateTime('2024-01-10');
+$newDate = $duration->addTo($date);
+
+echo $newDate->format('Y-m-d'); // '2024-02-15'
+
+// 3. Properties are synchronized
+$duration->iso = 'PT2H30M'; // Change duration to 2 hours 30 minutes
+echo $duration->toSeconds(); // 9000
+
+$date2 = new DateTime('2024-01-01 10:00:00');
+echo $duration->subtractFrom($date2)->format('Y-m-d H:i:s'); // '2024-01-01 07:30:00'
+
+// 4. Create from DateInterval
+$interval = $date->diff($newDate);
+$durationFromInterval = new Iso8601Duration($interval);
+echo $durationFromInterval->iso; // 'P1M5D'
+```
+
+### Helper: toIso8601Duration()
+
+Converts a `DateInterval` object directly into a normalized ISO 8601 string.
+
+```php
+use function org\iso\helpers\toIso8601Duration;
+use DateTime;
+use DateInterval;
+
+// From a diff
+$start = new DateTime('2024-01-01');
+$end = new DateTime('2024-03-15');
+$interval = $start->diff($end);
+
+echo toIso8601Duration($interval); // 'P2M14D'
+
+// From a new interval
+$interval = new DateInterval('PT1H30M');
+echo toIso8601Duration($interval); // 'PT1H30M'
+```
+
 ---
 
 ## 📜 License

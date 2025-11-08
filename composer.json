@@ -28,7 +28,11 @@
     "autoload-dev": {
         "psr-4": {
             "tests\\": "tests"
-        }
+        },
+        "files":
+        [
+            "src/org/iso/helpers/toIso8601Duration.php"
+        ]
     },
     "require": {
         "php": ">=8.4",
