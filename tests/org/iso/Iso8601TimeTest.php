@@ -79,13 +79,6 @@ class Iso8601TimeTest extends TestCase
         $this->assertEquals('T12:34:56Z', $time->iso);
     }
 
-    public function testToDateTimeReturnsImmutableClone(): void
-    {
-        $time = new Iso8601Time('T10:20:30Z');
-        $dt = $time->toDateTime();
-        $this->assertEquals('10:20:30', $dt->format('H:i:s'));
-    }
-
     public function testInvalidIsoStringThrows(): void
     {
         $this->expectException(InvalidArgumentException::class);

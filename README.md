@@ -177,7 +177,37 @@ $durationFromInterval = new Iso8601Duration($interval);
 echo $durationFromInterval->iso; // 'P1M5D'
 ```
 
-### Helper: toIso8601Duration()
+### Utility: ISO 8601 Times
+
+The `Iso8601Time` class (PHP 8.4+) provides robust handling of time-only strings.
+
+```php
+use org\iso\Iso8601Time;
+use DateTimeImmutable;
+use DateTimeZone;
+
+// 1. Create from an ISO string
+$time = new Iso8601Time('T14:30:00Z');
+
+// 2. Access properties
+echo $time->hours;   // 14
+echo $time->minutes; // 30
+echo $time->iso;     // "T14:30:00Z"
+
+// 3. Properties are synchronized
+$time->iso = 'T08:15:00+02:00';
+echo $time->hours; // 8
+echo $time->time->getTimezone()->getName(); // '+02:00'
+
+// 4. Create from DateTimeInterface
+$dt = new DateTimeImmutable('23:59:59', new DateTimeZone('-05:00'));
+$timeFromDt = new Iso8601Time($dt);
+echo $timeFromDt->iso; // 'T23:59:59-05:00' 
+```
+
+### Helper: ISO 8601 Conversion & Validation
+
+#### toIso8601Duration()
 
 Converts a `DateInterval` object directly into a normalized ISO 8601 string.
 
@@ -196,6 +226,45 @@ echo toIso8601Duration($interval); // 'P2M14D'
 // From a new interval
 $interval = new DateInterval('PT1H30M');
 echo toIso8601Duration($interval); // 'PT1H30M'
+```
+
+#### toIso8601Time()
+
+Converts a `DateTimeInterface` object into a normalized ISO 8601 time string.
+
+```php
+use function org\iso\helpers\toIso8601Time;
+use DateTimeImmutable;
+use DateTimeZone;
+
+$dt_utc = new DateTimeImmutable('14:30:00', new DateTimeZone('UTC'));
+echo toIso8601Time($dt_utc); // "T14:30:00Z"
+
+$dt_offset = new DateTimeImmutable('08:15:30', new DateTimeZone('+02:00'));
+echo toIso8601Time($dt_offset); // "T08:15:30+02:00"
+```
+
+#### isIso8601Duration() and isIso8601Time()
+
+Validates if a string conforms to the ISO 8601 specification.
+
+```php
+use function org\iso\helpers\isIso8601Time;
+use function org\iso\helpers\isIso8601Duration;
+
+// Time Validation
+isIso8601Time('T14:30:00Z');      // true
+isIso8601Time('T14:30:00', true); // true (strict)
+isIso8601Time('14:30:00', true); // false (strict requires 'T')
+isIso8601Time('T25:00:00');      // false (invalid hour)
+isIso8601Time('T12:60:00');      // false (invalid minute)
+
+// Duration Validation
+isIso8601Duration('P1Y2M3D');  // true
+isIso8601Duration('PT4H30M');  // true
+isIso8601Duration('P1YT');     // false (strict mode)
+isIso8601Duration('P');        // false
+isIso8601Duration('INVALID');  // false 
 ```
 
 ---

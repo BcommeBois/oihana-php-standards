@@ -66,7 +66,7 @@ use org\iso\Iso8601Duration as ISO8601 ;
  */
 function isIso8601Duration( string $duration, bool $strict = false ) :bool
 {
-    if ( $strict)
+    if ( $strict )
     {
         if ( !preg_match(ISO8601::PATTERN , $duration, $matches ) )
         {

@@ -411,7 +411,7 @@ class Iso8601Duration
         $hours   = $this->_interval->h ;
         $minutes = $this->_interval->i ;
         $seconds = $this->_interval->s ;
-        return $seconds + ($minutes * 60) + ($hours * 3600) + ($days * 86400);
+        return $seconds + ( $minutes * 60 ) + ( $hours * 3600 ) + ( $days * 86400 ) ;
     }
 
     /**
@@ -433,6 +433,8 @@ class Iso8601Duration
     {
         return $this->_iso;
     }
+
+    // --------------------- INTERNALS ---------------------
 
     /**
      * The internal DateInterval representing the duration.
