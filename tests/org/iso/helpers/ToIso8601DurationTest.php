@@ -5,13 +5,23 @@ namespace tests\org\iso\helpers;
 use DateInterval;
 use DateMalformedIntervalStringException;
 use DateTime;
-
 use PHPUnit\Framework\TestCase;
 
 use function org\iso\helpers\toIso8601Duration;
 
+/**
+ * Unit tests for the toIso8601Duration function.
+ *
+ * @package tests\org\iso\helpers
+ * @author  Marc Alcaraz (ekameleon)
+ * @since   1.0.1
+ */
 class ToIso8601DurationTest extends TestCase
 {
+    // ========================================================================
+    // toIso8601Duration Function Tests
+    // ========================================================================
+
     /**
      * Tests conversion of a zero duration.
      */

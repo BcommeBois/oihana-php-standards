@@ -88,9 +88,12 @@ class Iso8601Duration
      */
     public function __construct( string|DateInterval|null $duration = null )
     {
+        $this->_interval = new DateInterval(self::ZERO ) ;
+        $this->_iso      = self::ZERO ;
+
         if ( $duration instanceof DateInterval )
         {
-            $this->interval = $duration;
+            $this->interval = $duration ;
         }
         else
         {
@@ -147,6 +150,44 @@ class Iso8601Duration
      * Zero duration constant.
      */
     public const string ZERO = 'P0D' ;
+
+    /**
+     * ISO 8601 duration regex pattern :
+     * P[n]Y[n]M[n]W[n]DT[n]H[n]M[n]S or P[n]W
+     */
+    public const string PATTERN = '/^P(?:(\d+Y)?(\d+M)?(\d+W)?(\d+D)?(?:T(\d+H)?(\d+M)?(\d+(?:\.\d+)?S)?)?|0[YMWD]|T0S)$/';
+
+    /**
+     * Gets the number of days in the duration.
+     *
+     * @var int
+     *
+     * @example
+     * ```php
+     * $duration = new Iso8601Duration('P5D');
+     * echo $duration->days; // 5
+     * ```
+     */
+    public int $days
+    {
+        get => $this->_interval->d ;
+    }
+
+    /**
+     * Gets the number of hours in the duration.
+     *
+     * @var int
+     *
+     * @example
+     * ```php
+     * $duration = new Iso8601Duration('PT4H30M');
+     * echo $duration->hours; // 4
+     * ```
+     */
+    public int $hours
+    {
+        get => $this->_interval->h ;
+    }
 
     /**
      * Gets or sets the DateInterval representation of the duration.
@@ -209,6 +250,70 @@ class Iso8601Duration
                 throw new InvalidArgumentException("Invalid ISO 8601 duration: $value" , 0 , $exception ) ;
             }
         }
+    }
+
+    /**
+     * Gets the number of minutes in the duration.
+     *
+     * @var int
+     *
+     * @example
+     * ```php
+     * $duration = new Iso8601Duration('PT4H30M');
+     * echo $duration->minutes; // 30
+     * ```
+     */
+    public int $minutes
+    {
+        get => $this->_interval->i ;
+    }
+
+    /**
+     * Gets the number of months in the duration.
+     *
+     * @var int
+     *
+     * @example
+     * ```php
+     * $duration = new Iso8601Duration('P2Y3M');
+     * echo $duration->months; // 3
+     * ```
+     */
+    public int $months
+    {
+        get => $this->_interval->m ;
+    }
+
+    /**
+     * Gets the number of seconds in the duration.
+     *
+     * @var int
+     *
+     * @example
+     * ```php
+     * $duration = new Iso8601Duration('PT1M45S');
+     * echo $duration->seconds; // 45
+     * ```
+     */
+    public int $seconds
+    {
+        get => $this->_interval->s ;
+    }
+
+    /**
+     * Gets the number of years in the duration.
+     *
+     * @var int
+     *
+     * @example
+     * ```php
+     * $duration = new Iso8601Duration('P2Y3M');
+     * echo $duration->years; // 2
+     * ```
+     */
+    public int $years
+    {
+        get => $this->_interval->y;
     }
 
     /**

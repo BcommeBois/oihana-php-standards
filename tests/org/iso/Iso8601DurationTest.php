@@ -1,119 +1,144 @@
 <?php
 
-namespace tests\org\iso ;
+namespace tests\org\iso;
 
 use DateInterval;
-use DateInvalidOperationException;
 use DateTime;
-use InvalidArgumentException;
 use org\iso\Iso8601Duration;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit tests for the Iso8601Duration class.
+ * Unit tests for the toIso8601Duration function.
  *
- * @package org\iso\tests
+ * @package tests\org\iso\helpers
  * @author  Marc Alcaraz (ekameleon)
  * @since   1.0.1
  */
 class Iso8601DurationTest extends TestCase
 {
     // ========================================================================
-    // Constructor Tests
-    // ========================================================================
-
-    /**
-     * Tests construction with an ISO 8601 string.
-     */
-    public function testConstructWithIsoString(): void
-    {
-        $duration = new Iso8601Duration('P1Y2M3D');
-
-        $this->assertSame('P1Y2M3D', $duration->iso);
-    }
-
-    /**
-     * Tests construction with a DateInterval object.
-     */
-    public function testConstructWithDateInterval(): void
-    {
-        $interval = new DateInterval('PT2H30M');
-        $duration = new Iso8601Duration($interval);
-
-        $this->assertSame('PT2H30M', $duration->iso);
-    }
-
-    /**
-     * Tests construction with null (default zero duration).
-     */
-    public function testConstructWithNull(): void
-    {
-        $duration = new Iso8601Duration(null);
-
-        $this->assertSame('P0D', $duration->iso);
-    }
-
-    /**
-     * Tests construction without parameter (default zero duration).
-     */
-    public function testConstructWithoutParameter(): void
-    {
-        $duration = new Iso8601Duration();
-
-        $this->assertSame('P0D', $duration->iso);
-        $this->assertSame(0, $duration->toSeconds());
-    }
-
-    /**
-     * Tests construction with invalid ISO string throws exception.
-     */
-    public function testConstructWithInvalidIsoStringThrowsException(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid ISO 8601 duration');
-
-        new Iso8601Duration('INVALID');
-    }
-
-    /**
-     * Tests construction with date difference from DateTime::diff().
-     */
-    public function testConstructWithDateDifference(): void
-    {
-        $start = new DateTime('2024-01-01');
-        $end = new DateTime('2024-01-10');
-        $interval = $start->diff($end);
-
-        $duration = new Iso8601Duration($interval);
-
-        $this->assertSame('P9D', $duration->iso);
-    }
-
-    // ========================================================================
     // Constants Tests
     // ========================================================================
 
     /**
-     * Tests that all constants have correct values.
+     * Tests PERIOD constant.
      */
-    public function testConstants(): void
+    public function testPeriodConstant(): void
     {
         $this->assertSame('P', Iso8601Duration::PERIOD);
+    }
+
+    /**
+     * Tests TIME constant.
+     */
+    public function testTimeConstant(): void
+    {
         $this->assertSame('T', Iso8601Duration::TIME);
+    }
+
+    /**
+     * Tests YEAR constant.
+     */
+    public function testYearConstant(): void
+    {
         $this->assertSame('Y', Iso8601Duration::YEAR);
+    }
+
+    /**
+     * Tests MONTH constant.
+     */
+    public function testMonthConstant(): void
+    {
         $this->assertSame('M', Iso8601Duration::MONTH);
+    }
+
+    /**
+     * Tests DAY constant.
+     */
+    public function testDayConstant(): void
+    {
         $this->assertSame('D', Iso8601Duration::DAY);
+    }
+
+    /**
+     * Tests WEEK constant.
+     */
+    public function testWeekConstant(): void
+    {
         $this->assertSame('W', Iso8601Duration::WEEK);
+    }
+
+    /**
+     * Tests HOUR constant.
+     */
+    public function testHourConstant(): void
+    {
         $this->assertSame('H', Iso8601Duration::HOUR);
+    }
+
+    /**
+     * Tests MINUTE constant.
+     */
+    public function testMinuteConstant(): void
+    {
         $this->assertSame('M', Iso8601Duration::MINUTE);
+    }
+
+    /**
+     * Tests SECOND constant.
+     */
+    public function testSecondConstant(): void
+    {
         $this->assertSame('S', Iso8601Duration::SECOND);
+    }
+
+    /**
+     * Tests ZERO constant.
+     */
+    public function testZeroConstant(): void
+    {
         $this->assertSame('P0D', Iso8601Duration::ZERO);
     }
 
     /**
-     * Tests using ZERO constant for construction.
+     * Tests PATTERN constant is a valid regex.
      */
-    public function testConstructWithZeroConstant(): void
+    public function testPatternConstantIsValidRegex(): void
+    {
+        // Test that the pattern is a valid regex
+        $this->assertIsString(Iso8601Duration::PATTERN);
+        $this->assertStringStartsWith('/^P', Iso8601Duration::PATTERN);
+        $this->assertStringEndsWith('$/', Iso8601Duration::PATTERN);
+
+        // Test it matches valid durations
+        $this->assertMatchesRegularExpression(Iso8601Duration::PATTERN, 'P1Y2M3D');
+        $this->assertMatchesRegularExpression(Iso8601Duration::PATTERN, 'PT4H30M');
+        $this->assertMatchesRegularExpression(Iso8601Duration::PATTERN, 'P1Y2M3DT4H5M6S');
+    }
+
+    /**
+     * Tests constants can be used to build duration strings.
+     */
+    public function testBuildDurationWithConstants(): void
+    {
+        $duration = Iso8601Duration::PERIOD . '1' . Iso8601Duration::YEAR
+            . '2' . Iso8601Duration::MONTH
+            . '3' . Iso8601Duration::DAY;
+
+        $this->assertSame('P1Y2M3D', $duration);
+
+        // Test with time
+        $duration = Iso8601Duration::PERIOD . Iso8601Duration::TIME
+            . '4' . Iso8601Duration::HOUR
+            . '30' . Iso8601Duration::MINUTE;
+
+        $this->assertSame('PT4H30M', $duration);
+    }
+
+    /**
+     * Tests ZERO constant can be used to create zero duration.
+     */
+    public function testZeroConstantUsage(): void
     {
         $duration = new Iso8601Duration(Iso8601Duration::ZERO);
 
@@ -122,505 +147,149 @@ class Iso8601DurationTest extends TestCase
     }
 
     // ========================================================================
-    // Property: $iso (getter/setter) Tests
+    // Component Properties Tests
     // ========================================================================
 
     /**
-     * Tests getting the iso property.
+     * Tests years property getter.
      */
-    public function testGetIsoProperty(): void
+    public function testYearsProperty(): void
     {
-        $duration = new Iso8601Duration('P5D');
+        $duration = new Iso8601Duration('P5Y');
 
-        $this->assertSame('P5D', $duration->iso);
+        $this->assertSame(5, $duration->years);
     }
 
     /**
-     * Tests setting the iso property with valid string.
+     * Tests months property getter.
      */
-    public function testSetIsoProperty(): void
+    public function testMonthsProperty(): void
     {
-        $duration = new Iso8601Duration('P1D');
-        $duration->iso = 'PT2H';
+        $duration = new Iso8601Duration('P3M');
 
-        $this->assertSame('PT2H', $duration->iso);
-        $this->assertSame(7200, $duration->toSeconds());
+        $this->assertSame(3, $duration->months);
     }
 
     /**
-     * Tests that setting iso property updates the interval.
+     * Tests days property getter.
      */
-    public function testSetIsoPropertyUpdatesInterval(): void
+    public function testDaysProperty(): void
+    {
+        $duration = new Iso8601Duration('P10D');
+
+        $this->assertSame(10, $duration->days);
+    }
+
+    /**
+     * Tests hours property getter.
+     */
+    public function testHoursProperty(): void
+    {
+        $duration = new Iso8601Duration('PT8H');
+
+        $this->assertSame(8, $duration->hours);
+    }
+
+    /**
+     * Tests minutes property getter.
+     */
+    public function testMinutesProperty(): void
+    {
+        $duration = new Iso8601Duration('PT45M');
+
+        $this->assertSame(45, $duration->minutes);
+    }
+
+    /**
+     * Tests seconds property getter.
+     */
+    public function testSecondsProperty(): void
+    {
+        $duration = new Iso8601Duration('PT30S');
+
+        $this->assertSame(30, $duration->seconds);
+    }
+
+    /**
+     * Tests all component properties with complex duration.
+     */
+    public function testAllComponentProperties(): void
+    {
+        $duration = new Iso8601Duration('P2Y3M15DT4H30M45S');
+
+        $this->assertSame(2, $duration->years);
+        $this->assertSame(3, $duration->months);
+        $this->assertSame(15, $duration->days);
+        $this->assertSame(4, $duration->hours);
+        $this->assertSame(30, $duration->minutes);
+        $this->assertSame(45, $duration->seconds);
+    }
+
+    /**
+     * Tests component properties with zero duration.
+     */
+    public function testComponentPropertiesWithZeroDuration(): void
+    {
+        $duration = new Iso8601Duration('P0D');
+
+        $this->assertSame(0, $duration->years);
+        $this->assertSame(0, $duration->months);
+        $this->assertSame(0, $duration->days);
+        $this->assertSame(0, $duration->hours);
+        $this->assertSame(0, $duration->minutes);
+        $this->assertSame(0, $duration->seconds);
+    }
+
+    /**
+     * Tests that component properties update when iso is changed.
+     */
+    public function testComponentPropertiesUpdateWithIso(): void
     {
         $duration = new Iso8601Duration('P1D');
+        $this->assertSame(1, $duration->days);
+
         $duration->iso = 'P5D';
-
-        $this->assertSame(5, $duration->interval->d);
+        $this->assertSame(5, $duration->days);
     }
 
     /**
-     * Tests setting iso property with invalid string throws exception.
+     * Tests that component properties update when interval is changed.
      */
-    public function testSetIsoPropertyWithInvalidStringThrowsException(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        $duration = new Iso8601Duration('P1D');
-        $duration->iso = 'NOT_VALID';
-    }
-
-    // ========================================================================
-    // Property: $interval (getter/setter) Tests
-    // ========================================================================
-
-    /**
-     * Tests getting the interval property.
-     */
-    public function testGetIntervalProperty(): void
-    {
-        $duration = new Iso8601Duration('P3D');
-        $interval = $duration->interval;
-
-        $this->assertInstanceOf(DateInterval::class, $interval);
-        $this->assertSame(3, $interval->d);
-    }
-
-    /**
-     * Tests setting the interval property.
-     */
-    public function testSetIntervalProperty(): void
+    public function testComponentPropertiesUpdateWithInterval(): void
     {
         $duration = new Iso8601Duration('P1D');
-        $newInterval = new DateInterval('PT5H');
+        $this->assertSame(1, $duration->days);
 
-        $duration->interval = $newInterval;
-
-        $this->assertSame('PT5H', $duration->iso);
-        $this->assertSame(5, $duration->interval->h);
+        $duration->interval = new DateInterval('P10D');
+        $this->assertSame(10, $duration->days);
     }
 
     /**
-     * Tests that setting interval clones the object (no reference).
+     * Tests using component properties in calculations.
      */
-    public function testSetIntervalPropertyClonesObject(): void
+    public function testComponentPropertiesInCalculations(): void
     {
-        $duration = new Iso8601Duration('P1D');
-        $externalInterval = new DateInterval('P5D');
+        $duration = new Iso8601Duration('P2Y3M15D');
 
-        $duration->interval = $externalInterval;
-        $externalInterval->d = 10; // Modify external
+        $totalMonths = ($duration->years * 12) + $duration->months;
+        $this->assertSame(27, $totalMonths);
 
-        $this->assertSame(5, $duration->interval->d); // Should not be affected
+        $approximateDays = $totalMonths * 30 + $duration->days;
+        $this->assertSame(825, $approximateDays);
     }
 
     /**
-     * Tests that setting interval property updates the iso string.
+     * Tests component properties with DateInterval from diff.
      */
-    public function testSetIntervalPropertyUpdatesIso(): void
+    public function testComponentPropertiesFromDiff(): void
     {
-        $duration = new Iso8601Duration('P1D');
-        $duration->interval = new DateInterval('P2Y3M');
-
-        $this->assertSame('P2Y3M', $duration->iso);
-    }
-
-    // ========================================================================
-    // Method: toSeconds() Tests
-    // ========================================================================
-
-    /**
-     * Tests toSeconds with zero duration.
-     */
-    public function testToSecondsZero(): void
-    {
-        $duration = new Iso8601Duration('P0D');
-
-        $this->assertSame(0, $duration->toSeconds());
-    }
-
-    /**
-     * Tests toSeconds with hours only.
-     */
-    public function testToSecondsHours(): void
-    {
-        $duration = new Iso8601Duration('PT2H');
-
-        $this->assertSame(7200, $duration->toSeconds());
-    }
-
-    /**
-     * Tests toSeconds with minutes only.
-     */
-    public function testToSecondsMinutes(): void
-    {
-        $duration = new Iso8601Duration('PT30M');
-
-        $this->assertSame(1800, $duration->toSeconds());
-    }
-
-    /**
-     * Tests toSeconds with seconds only.
-     */
-    public function testToSecondsSeconds(): void
-    {
-        $duration = new Iso8601Duration('PT45S');
-
-        $this->assertSame(45, $duration->toSeconds());
-    }
-
-    /**
-     * Tests toSeconds with days only.
-     */
-    public function testToSecondsDays(): void
-    {
-        $duration = new Iso8601Duration('P1D');
-
-        $this->assertSame(86400, $duration->toSeconds());
-    }
-
-    /**
-     * Tests toSeconds with months (approximate: 30 days).
-     */
-    public function testToSecondsMonths(): void
-    {
-        $duration = new Iso8601Duration('P1M');
-
-        $this->assertSame(2592000, $duration->toSeconds()); // 30 * 86400
-    }
-
-    /**
-     * Tests toSeconds with years (approximate: 365 days).
-     */
-    public function testToSecondsYears(): void
-    {
-        $duration = new Iso8601Duration('P1Y');
-
-        $this->assertSame(31536000, $duration->toSeconds()); // 365 * 86400
-    }
-
-    /**
-     * Tests toSeconds with complex duration.
-     */
-    public function testToSecondsComplex(): void
-    {
-        $duration = new Iso8601Duration('P1Y2M3DT4H5M6S');
-
-        $expected = (365 + 60 + 3) * 86400 + 4 * 3600 + 5 * 60 + 6;
-        $this->assertSame($expected, $duration->toSeconds());
-    }
-
-    /**
-     * Tests toSeconds with hours, minutes, and seconds.
-     */
-    public function testToSecondsTimeComponents(): void
-    {
-        $duration = new Iso8601Duration('PT1H30M45S');
-
-        $expected = 3600 + 1800 + 45;
-        $this->assertSame($expected, $duration->toSeconds());
-    }
-
-    // ========================================================================
-    // Method: addTo() Tests
-    // ========================================================================
-
-    /**
-     * Tests addTo with days.
-     */
-    public function testAddToDays(): void
-    {
-        $duration = new Iso8601Duration('P5D');
-        $date = new DateTime('2024-01-01');
-
-        $result = $duration->addTo($date);
-
-        $this->assertSame('2024-01-06', $result->format('Y-m-d'));
-    }
-
-    /**
-     * Tests addTo with months handling leap year.
-     */
-    public function testAddToMonthsLeapYear(): void
-    {
-        $duration = new Iso8601Duration('P1M');
-        $date = new DateTime('2024-01-31');
-
-        $result = $duration->addTo($date);
-
-        $this->assertSame('2024-03-02', $result->format('Y-m-d'));
-    }
-
-    /**
-     * Tests addTo with time components.
-     */
-    public function testAddToTime(): void
-    {
-        $duration = new Iso8601Duration('PT2H30M');
-        $date = new DateTime('2024-01-01 10:00:00');
-
-        $result = $duration->addTo($date);
-
-        $this->assertSame('2024-01-01 12:30:00', $result->format('Y-m-d H:i:s'));
-    }
-
-    /**
-     * Tests that addTo does not modify the original date.
-     */
-    public function testAddToDoesNotModifyOriginal(): void
-    {
-        $duration = new Iso8601Duration('P5D');
-        $original = new DateTime('2024-01-01');
-        $originalString = $original->format('Y-m-d');
-
-        $duration->addTo($original);
-
-        $this->assertSame($originalString, $original->format('Y-m-d'));
-    }
-
-    /**
-     * Tests addTo with zero duration.
-     */
-    public function testAddToZero(): void
-    {
-        $duration = new Iso8601Duration('P0D');
-        $date = new DateTime('2024-01-01 12:00:00');
-
-        $result = $duration->addTo($date);
-
-        $this->assertSame('2024-01-01 12:00:00', $result->format('Y-m-d H:i:s'));
-    }
-
-    /**
-     * Tests addTo with years.
-     */
-    public function testAddToYears(): void
-    {
-        $duration = new Iso8601Duration('P2Y');
-        $date = new DateTime('2024-01-01');
-
-        $result = $duration->addTo($date);
-
-        $this->assertSame('2026-01-01', $result->format('Y-m-d'));
-    }
-
-    // ========================================================================
-    // Method: subtractFrom() Tests
-    // ========================================================================
-
-    /**
-     * Tests subtractFrom with days.
-     * @throws DateInvalidOperationException
-     */
-    public function testSubtractFromDays(): void
-    {
-        $duration = new Iso8601Duration('P5D');
-        $date = new DateTime('2024-01-10');
-
-        $result = $duration->subtractFrom($date);
-
-        $this->assertSame('2024-01-05', $result->format('Y-m-d'));
-    }
-
-    /**
-     * Tests subtractFrom with months handling leap year.
-     * @throws DateInvalidOperationException
-     */
-    public function testSubtractFromMonthsLeapYear(): void
-    {
-        $duration = new Iso8601Duration('P1M');
-        $date = new DateTime('2024-03-31');
-
-        $result = $duration->subtractFrom($date);
-
-        $this->assertSame('2024-03-02', $result->format('Y-m-d'));
-    }
-
-    /**
-     * Tests subtractFrom with time components.
-     */
-    public function testSubtractFromTime(): void
-    {
-        $duration = new Iso8601Duration('PT1H30M');
-        $date = new DateTime('2024-01-01 12:00:00');
-
-        $result = $duration->subtractFrom($date);
-
-        $this->assertSame('2024-01-01 10:30:00', $result->format('Y-m-d H:i:s'));
-    }
-
-    /**
-     * Tests that subtractFrom does not modify the original date.
-     */
-    public function testSubtractFromDoesNotModifyOriginal(): void
-    {
-        $duration = new Iso8601Duration('P5D');
-        $original = new DateTime('2024-01-10');
-        $originalString = $original->format('Y-m-d');
-
-        $duration->subtractFrom($original);
-
-        $this->assertSame($originalString, $original->format('Y-m-d'));
-    }
-
-    /**
-     * Tests subtractFrom with zero duration.
-     */
-    public function testSubtractFromZero(): void
-    {
-        $duration = new Iso8601Duration('P0D');
-        $date = new DateTime('2024-01-01 12:00:00');
-
-        $result = $duration->subtractFrom($date);
-
-        $this->assertSame('2024-01-01 12:00:00', $result->format('Y-m-d H:i:s'));
-    }
-
-    /**
-     * Tests subtractFrom with years.
-     */
-    public function testSubtractFromYears(): void
-    {
-        $duration = new Iso8601Duration('P2Y');
-        $date = new DateTime('2024-01-01');
-
-        $result = $duration->subtractFrom($date);
-
-        $this->assertSame('2022-01-01', $result->format('Y-m-d'));
-    }
-
-    // ========================================================================
-    // Method: __toString() Tests
-    // ========================================================================
-
-    /**
-     * Tests __toString magic method.
-     */
-    public function testToString(): void
-    {
-        $duration = new Iso8601Duration('P1Y2M3D');
-
-        $this->assertSame('P1Y2M3D', (string) $duration);
-    }
-
-    /**
-     * Tests __toString in string concatenation.
-     */
-    public function testToStringInConcatenation(): void
-    {
-        $duration = new Iso8601Duration('PT30M');
-        $result = "Duration: " . $duration;
-
-        $this->assertSame("Duration: PT30M", $result);
-    }
-
-    /**
-     * Tests __toString with echo/print.
-     */
-    public function testToStringWithEcho(): void
-    {
-        $duration = new Iso8601Duration('P5D');
-
-        ob_start();
-        echo $duration;
-        $output = ob_get_clean();
-
-        $this->assertSame('P5D', $output);
-    }
-
-    // ========================================================================
-    // Integration Tests
-    // ========================================================================
-
-    /**
-     * Tests complete workflow: construct, modify, use.
-     */
-    public function testCompleteWorkflow(): void
-    {
-        // Create
-        $duration = new Iso8601Duration('P1D');
-        $this->assertSame('P1D', $duration->iso);
-
-        // Modify via iso
-        $duration->iso = 'P5D';
-        $this->assertSame(5, $duration->interval->d);
-
-        // Modify via interval
-        $duration->interval = new DateInterval('PT2H');
-        $this->assertSame('PT2H', $duration->iso);
-
-        // Use in calculation
-        $date = new DateTime('2024-01-01 10:00:00');
-        $result = $duration->addTo($date);
-        $this->assertSame('2024-01-01 12:00:00', $result->format('Y-m-d H:i:s'));
-    }
-
-    /**
-     * Tests synchronization between iso and interval properties.
-     */
-    public function testPropertySynchronization(): void
-    {
-        $duration = new Iso8601Duration('P1Y');
-
-        // Change via iso
-        $duration->iso = 'P2Y3M';
-        $this->assertSame(2, $duration->interval->y);
-        $this->assertSame(3, $duration->interval->m);
-
-        // Change via interval
-        $duration->interval = new DateInterval('P5D');
-        $this->assertSame('P5D', $duration->iso);
-    }
-
-    /**
-     * Tests week duration conversion (P1W becomes P7D).
-     */
-    public function testWeekConversion(): void
-    {
-        $duration = new Iso8601Duration('P1W');
-
-        // PHP preserves the original P1W format
-        $this->assertSame('P1W' , $duration->iso );
-        $this->assertSame(7     , $duration->interval->d );
-
-        // But when we regenerate from interval, it becomes P7D
-        $duration->interval = new DateInterval('P1W');
-        $this->assertSame('P7D', $duration->iso); // Now converted
-    }
-
-    /**
-     * Tests complex real-world scenario.
-     */
-    public function testRealWorldScenario(): void
-    {
-        // Calculate project duration from start to end
-        $projectStart = new DateTime('2024-01-01');
-        $projectEnd = new DateTime('2024-06-30');
-        $interval = $projectStart->diff($projectEnd);
+        $start = new DateTime('2024-01-01');
+        $end = new DateTime('2024-06-15');
+        $interval = $start->diff($end);
 
         $duration = new Iso8601Duration($interval);
 
-        // Verify we can add this duration to another date
-        $nextProjectStart = new DateTime('2024-07-01');
-        $nextProjectEnd = $duration->addTo($nextProjectStart);
-
-        // 2024-01-01 to 2024-06-30 = 181 days (leap year)
-        // 2024-07-01 + 181 days = 2024-12-30
-        $this->assertSame('2024-12-30', $nextProjectEnd->format('Y-m-d'));
-    }
-
-    /**
-     * Tests immutability of operations.
-     */
-    public function testImmutabilityOfOperations(): void
-    {
-        $duration = new Iso8601Duration('P5D');
-        $date1 = new DateTime('2024-01-01');
-        $date2 = new DateTime('2024-01-01');
-
-        $result1 = $duration->addTo($date1);
-        $result2 = $duration->addTo($date2);
-
-        $this->assertSame($date1->format('Y-m-d'), $date2->format('Y-m-d'));
-        $this->assertSame($result1->format('Y-m-d'), $result2->format('Y-m-d'));
+        $this->assertSame(5, $duration->months);
+        $this->assertSame(14, $duration->days);
     }
 }

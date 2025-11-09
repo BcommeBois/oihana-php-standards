@@ -31,7 +31,8 @@
         },
         "files":
         [
-            "src/org/iso/helpers/toIso8601Duration.php"
+            "src/org/iso/helpers/toIso8601Duration.php",
+            "src/org/iso/helpers/isIso8601Duration.php"
         ]
     },
     "require": {

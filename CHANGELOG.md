@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 - Adds the iso 3166-1 alpha 2 standard constants.
-- Adds the Iso8601Duration class + the toIso8601Duration helper.
+- Adds the Iso8601Duration class + isIso8601Duration and toIso8601Duration helper.
+- Adds the Iso8601Time class.
 
 ### Fixed
 - Fix the PackageCode::ROLL value.
