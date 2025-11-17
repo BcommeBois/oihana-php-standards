@@ -548,7 +548,7 @@ class PackageCode
     /**
      * A collection or group of distinct items or packages considered as a unit (fr -> Ensemble, Collection).
      */
-    public const string SET = 'SM' ;
+    public const string SET = 'SX' ;
 
     /**
      * A single, flat, thin piece of material, often paper, plastic, or fabric (fr -> Feuille).
@@ -558,7 +558,7 @@ class PackageCode
     /**
      * A single, flat piece of metal in sheet form (fr -> Tôle, Feuille métallique).
      */
-    public const string SHEET_METAL = 'Sheetmetal' ;
+    public const string SHEET_METAL = 'SM' ;
 
     /**
      * Sheet, plastic wrapping (fr -> Feuille, emballage plastique)
