@@ -5,8 +5,6 @@ namespace org\iso;
 use oihana\reflect\traits\ConstantsTrait;
 
 /**
- * Class ISO4217
- *
  * Provides a set of constants representing currency codes as defined by the ISO 4217 standard.
  *
  * ISO 4217 is an international standard published by the International Organization for Standardization (ISO),

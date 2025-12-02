@@ -5,8 +5,6 @@ namespace org\iso;
 use oihana\reflect\traits\ConstantsTrait;
 
 /**
- * Class ISO639_1
- *
  * Provides a set of constants representing language codes as defined by the ISO 639-1 standard.
  *
  * ISO 639-1 is part of the ISO 639 family of standards for the representation of names of languages.

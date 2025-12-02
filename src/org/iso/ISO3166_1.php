@@ -5,8 +5,6 @@ namespace org\iso;
 use oihana\reflect\traits\ConstantsTrait;
 
 /**
- * Class ISO3166_1
- *
  * Provides a set of constants representing country and territory codes as defined by the ISO 3166-1 standard.
  *
  * ISO 3166-1 specifies two-letter (alpha-2) codes for countries, dependent territories, and special areas of

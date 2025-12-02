@@ -5,8 +5,6 @@ namespace org\iso;
 use oihana\reflect\traits\ConstantsTrait;
 
 /**
- * Class ISO15924
- *
  * Provides a set of constants representing script codes as defined by the ISO 15924 standard.
  *
  * The ISO 15924 standard defines four-letter codes for the representation of names of writing scripts
