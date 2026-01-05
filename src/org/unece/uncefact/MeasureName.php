@@ -89,6 +89,7 @@ class MeasureName
     // =====================================================================
 
     public const string BARREL           = 'Barrel';
+    public const string CENTILITRE       = 'Centilitre' ;
     public const string CUBIC_FOOT       = 'Cubic Foot';
     public const string CUBIC_METER      = 'Cubic Meter';
     public const string CUBIC_CENTIMETER = 'Cubic Centimeter';

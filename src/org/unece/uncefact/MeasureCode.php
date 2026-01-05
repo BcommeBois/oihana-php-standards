@@ -47,7 +47,7 @@ class MeasureCode
     // Mass Units (Weight)
     // =====================================================================
 
-    public const string CARAT      = 'CT'  ; // Carat
+    public const string CARAT      = 'CTM' ; // Carat
     public const string GRAM       = 'GRM' ; // Gram
     public const string KILOGRAM   = 'KGM' ; // Kilogram
     public const string METRIC_TON = 'TNE' ; // Metric Ton
@@ -90,15 +90,16 @@ class MeasureCode
     // Volume Units
     // =====================================================================
 
-    public const string LITER            = 'LTR' ; // Liter
-    public const string MILLILITER       = 'MLT' ; // Milliliter
+    public const string BARREL           = 'BLL' ; // Barrel
+    public const string CENTILITRE       = 'CLT' ; // Centilitre
+    public const string CUBIC_FOOT       = 'FTQ' ; // Cubic Foot
     public const string CUBIC_METER      = 'MTQ' ; // Cubic Meter (M3)
     public const string CUBIC_CENTIMETER = 'CMQ' ; // Cubic Centimeter
     public const string CUBIC_DECIMETER  = 'DMQ' ; // Cubic Decimeter
-    public const string US_GALLON        = 'GLD' ; // US Gallon
     public const string IMPERIAL_GALLON  = 'GLI' ; // Imperial Gallon (UK)
-    public const string BARREL           = 'BLL' ; // Barrel
-    public const string CUBIC_FOOT       = 'FTQ' ; // Cubic Foot
+    public const string LITER            = 'LTR' ; // Liter
+    public const string MILLILITER       = 'MLT' ; // Milliliter
+    public const string US_GALLON        = 'GLD' ; // US Gallon
 
     // =====================================================================
     // Time Units

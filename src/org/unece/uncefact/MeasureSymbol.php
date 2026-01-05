@@ -88,6 +88,7 @@ class MeasureSymbol
     // Volume Units
     // =====================================================================
 
+    public const string CENTILITRE       = 'cL';  // Centilitre
     public const string LITER            = 'L';   // Liter
     public const string MILLILITER       = 'mL';  // Milliliter
     public const string CUBIC_METER      = 'm³';  // Cubic Meter (M3)
