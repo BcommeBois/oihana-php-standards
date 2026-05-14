@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Adds the Iso8601Date value-object class (strict extended format, year/month/day/weekday/dayOfYear accessors).
 - Adds the Iso8601DateTime value-object class (strict T separator, composition with Iso8601Date and Iso8601Time, configurable output precision).
 - Adds the Iso8601Interval value-object class (start/end, start/duration, duration/end forms) with contains() and overlaps() methods, plus the isIso8601Interval helper.
+- Adds the Iso8601Recurrence value-object class (R[n]/<interval> form) with a lazy occurrences() generator, plus the isIso8601Recurrence helper.
 
 ### Fixed
 - Fix the PackageCode::ROLL value.
