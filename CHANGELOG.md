@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Adds the Iso8601Interval value-object class (start/end, start/duration, duration/end forms) with contains() and overlaps() methods, plus the isIso8601Interval helper.
 - Adds the Iso8601Recurrence value-object class (R[n]/<interval> form) with a lazy occurrences() generator, plus the isIso8601Recurrence helper.
 - Adds the Locale value-object class (org\ietf namespace, BCP 47 / RFC 5646) with cross-validation against ISO 639-1, ISO 15924 and ISO 3166-1, plus isLocale and parseLocaleTag helpers.
+- Adds the NumberFormat constants class (org\common namespace) with decimal/thousands separators (EU, US, FR, CH) and common numeric symbols.
 
 ### Fixed
 - Fix the PackageCode::ROLL value.
