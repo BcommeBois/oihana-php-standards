@@ -52,23 +52,16 @@ function isIso8601Interval( string $value ): bool
         return false ;
     }
 
-    $leftIsDateTime = isIso8601DateTime( $left  , true ) ;
-    $leftIsDuration = isIso8601Duration( $left  , true ) ;
+    $leftIsDateTime  = isIso8601DateTime( $left  , true ) ;
+    $leftIsDuration  = isIso8601Duration( $left  , true ) ;
     $rightIsDateTime = isIso8601DateTime( $right , true ) ;
     $rightIsDuration = isIso8601Duration( $right , true ) ;
 
-    if ( $leftIsDateTime && $rightIsDateTime )
+    return match ( true )
     {
-        return true ;
-    }
-    if ( $leftIsDateTime && $rightIsDuration )
-    {
-        return true ;
-    }
-    if ( $leftIsDuration && $rightIsDateTime )
-    {
-        return true ;
-    }
-
-    return false ;
+        $leftIsDateTime && $rightIsDateTime ,
+        $leftIsDateTime && $rightIsDuration ,
+        $leftIsDuration && $rightIsDateTime => true ,
+        default                             => false ,
+    } ;
 }
