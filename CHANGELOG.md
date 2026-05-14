@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Adds the TimePrecision constants class (seconds, milliseconds, microseconds).
 - Adds the isIso8601Date and toIso8601Date helpers.
 - Adds the isIso8601DateTime and toIso8601DateTime helpers.
+- Adds the DateFormat class (org\common namespace) extending Iso8601Format with RFC, HTTP, MySQL and Unix date formats.
 
 ### Fixed
 - Fix the PackageCode::ROLL value.
