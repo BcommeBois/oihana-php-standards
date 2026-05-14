@@ -20,6 +20,7 @@
     {
         "psr-4" :
         {
+            "org\\common\\": "src/org/common",
             "org\\iso\\": "src/org/iso",
             "org\\unece\\uncefact\\": "src/org/unece/uncefact",
             "org\\unstats\\": "src/org/unstats"
