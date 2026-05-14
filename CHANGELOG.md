@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Adds the isIso8601Date and toIso8601Date helpers.
 - Adds the isIso8601DateTime and toIso8601DateTime helpers.
 - Adds the DateFormat class (org\common namespace) extending Iso8601Format with RFC, HTTP, MySQL and Unix date formats.
+- Adds the Iso8601Date value-object class (strict extended format, year/month/day/weekday/dayOfYear accessors).
 
 ### Fixed
 - Fix the PackageCode::ROLL value.
