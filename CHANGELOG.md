@@ -38,9 +38,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - `ISO639_2` — 486 alpha-3 language codes in canonical form (terminologic when both B and T exist, single alpha-3 otherwise), per RFC 5646 §4.1.2; includes special-purpose codes `mis`/`mul`/`und`/`zxx`; the `qaa-qtz` private range is intentionally not enumerated
 - `ISO639_2B` — the 20 bibliographic-only forms (`fre`, `ger`, `chi`, `dut`, …) with `getBibliographicToTerminologicMap()` and `toTerminologic()` for B→T conversion
 
+#### ISO 639-5 language families (`org\iso`)
+- `ISO639_5` — 115 alpha-3 codes for language families and groups (`roa` Romance, `gem` Germanic, `sla` Slavic, `cel` Celtic, `sem` Semitic, `bnt` Bantu, `aus` Australian, `myn` Mayan, `afa` Afro-Asiatic, …); useful for language fallback chains. Roughly 65 codes overlap with `ISO639_2` (historical family codes); each registry remains independent and authoritative for its intended use.
+
 #### Tooling
 - `tools/generate-unm49-numeric.php` — maintenance script to regenerate `UNM49Numeric` from a curated dataset (outside composer autoload)
 - `tools/generate-iso639-2.php` — generator script that parses the official LoC dataset versioned at `tools/data/iso639-2.txt`
+- `tools/generate-iso639-5.php` — generator script that parses the LoC TSV dataset versioned at `tools/data/iso639-5.tsv`
 
 ### Fixed
 - `PackageCode::ROLL` value
