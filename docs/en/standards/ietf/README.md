@@ -9,6 +9,7 @@ This section covers classes in the [`org\ietf`](https://github.com/BcommeBois/oi
 | Class | Description |
 |---|---|
 | [`Locale`](Locale.md) | Value-object for BCP 47 language tags (`fr-FR`, `zh-Hant-TW`, …) |
+| [`BCP47Variant`](BCP47Variant.md) | IANA variant subtags (`1996`, `valencia`, `fonipa`, `tarask`, …) |
 
 ### Helpers
 

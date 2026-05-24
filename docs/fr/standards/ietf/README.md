@@ -9,6 +9,7 @@ Cette section couvre les classes du namespace [`org\ietf`](https://github.com/Bc
 | Classe | Description |
 |---|---|
 | [`Locale`](Locale.md) | Value-object pour les tags de langue BCP 47 (`fr-FR`, `zh-Hant-TW`, …) |
+| [`BCP47Variant`](BCP47Variant.md) | Sous-tags variants IANA (`1996`, `valencia`, `fonipa`, `tarask`, …) |
 
 ### Helpers
 

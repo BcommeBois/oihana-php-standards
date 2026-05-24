@@ -41,10 +41,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 #### ISO 639-5 language families (`org\iso`)
 - `ISO639_5` — 115 alpha-3 codes for language families and groups (`roa` Romance, `gem` Germanic, `sla` Slavic, `cel` Celtic, `sem` Semitic, `bnt` Bantu, `aus` Australian, `myn` Mayan, `afa` Afro-Asiatic, …); useful for language fallback chains. Roughly 65 codes overlap with `ISO639_2` (historical family codes); each registry remains independent and authoritative for its intended use.
 
+#### BCP 47 Variant subtags (`org\ietf`)
+- `BCP47Variant` — 139 variant subtags from the IANA Language Subtag Registry (`1996`, `1901`, `valencia`, `fonipa`, `tarask`, `pinyin`, `wadegile`, `monoton`, `polyton`, `scotland`, `oxendict`, …). Numeric subtags are exposed via `V_`-prefixed constants (e.g. `V_1996 = '1996'`, `V_1606NICT = '1606nict'`) since PHP identifiers cannot start with a digit. Deprecated variants remain enumerated (their syntax is still valid for legacy content).
+
 #### Tooling
 - `tools/generate-unm49-numeric.php` — maintenance script to regenerate `UNM49Numeric` from a curated dataset (outside composer autoload)
 - `tools/generate-iso639-2.php` — generator script that parses the official LoC dataset versioned at `tools/data/iso639-2.txt`
 - `tools/generate-iso639-5.php` — generator script that parses the LoC TSV dataset versioned at `tools/data/iso639-5.tsv`
+- `tools/generate-bcp47-iana.php` — single generator script that parses the IANA Language Subtag Registry (versioned at `tools/data/iana-language-subtag-registry.txt`, 731 KB) and can produce `BCP47Variant`, `BCP47Grandfathered`, `BCP47Redundant` (selectable via `--variant` / `--grandfathered` / `--redundant` flags). Only `BCP47Variant` is generated in this release; the two others come in a follow-up.
 
 ### Fixed
 - `PackageCode::ROLL` value
