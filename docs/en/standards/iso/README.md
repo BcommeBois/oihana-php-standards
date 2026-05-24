@@ -10,6 +10,8 @@ This section covers all classes in the [`org\iso`](https://github.com/BcommeBois
 |---|---|---|
 | [`ISO3166_1`](ISO3166_1.md) | ISO 3166-1 | Country codes alpha-2 (FR, US, JP, …) |
 | [`ISO639_1`](ISO639_1.md) | ISO 639-1 | Language codes alpha-2 (fr, en, ja, …) |
+| [`ISO639_2`](ISO639_2.md) | ISO 639-2 | Language codes alpha-3 canonical form (fra, deu, zho, …) |
+| [`ISO639_2B`](ISO639_2B.md) | ISO 639-2 | Language codes alpha-3 bibliographic form (fre, ger, chi, …) + B→T conversion |
 | [`ISO4217`](ISO4217.md) | ISO 4217 | Currency codes alpha-3 (EUR, USD, JPY, …) |
 | [`ISO15924`](ISO15924.md) | ISO 15924 | Writing system codes (Latn, Cyrl, Hant, …) |
 

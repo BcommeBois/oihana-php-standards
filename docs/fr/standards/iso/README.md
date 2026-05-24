@@ -10,6 +10,8 @@ Cette section couvre toutes les classes du namespace [`org\iso`](https://github.
 |---|---|---|
 | [`ISO3166_1`](ISO3166_1.md) | ISO 3166-1 | Codes pays alpha-2 (FR, US, JP, …) |
 | [`ISO639_1`](ISO639_1.md) | ISO 639-1 | Codes langue alpha-2 (fr, en, ja, …) |
+| [`ISO639_2`](ISO639_2.md) | ISO 639-2 | Codes langue alpha-3 forme canonique (fra, deu, zho, …) |
+| [`ISO639_2B`](ISO639_2B.md) | ISO 639-2 | Codes langue alpha-3 forme bibliographique (fre, ger, chi, …) + conversion B→T |
 | [`ISO4217`](ISO4217.md) | ISO 4217 | Codes monnaies alpha-3 (EUR, USD, JPY, …) |
 | [`ISO15924`](ISO15924.md) | ISO 15924 | Codes systèmes d'écriture (Latn, Cyrl, Hant, …) |
 

@@ -34,8 +34,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - `UNM49Numeric` — 3-digit numeric codes for the 248 countries/areas and 37 geographical regions of the UN M49 standard (001 World, 019 Americas, 142 Asia, 150 Europe, 419 Latin America and the Caribbean, …); constants prefixed with `M_` (PHP identifier constraint)
 - `org\ietf\helpers\isLocale` strict mode now cross-validates 3-digit region subtags against `UNM49Numeric` (e.g. `es-419` accepted, `es-999` rejected)
 
+#### ISO 639-2 alpha-3 language codes (`org\iso`)
+- `ISO639_2` — 486 alpha-3 language codes in canonical form (terminologic when both B and T exist, single alpha-3 otherwise), per RFC 5646 §4.1.2; includes special-purpose codes `mis`/`mul`/`und`/`zxx`; the `qaa-qtz` private range is intentionally not enumerated
+- `ISO639_2B` — the 20 bibliographic-only forms (`fre`, `ger`, `chi`, `dut`, …) with `getBibliographicToTerminologicMap()` and `toTerminologic()` for B→T conversion
+
 #### Tooling
 - `tools/generate-unm49-numeric.php` — maintenance script to regenerate `UNM49Numeric` from a curated dataset (outside composer autoload)
+- `tools/generate-iso639-2.php` — generator script that parses the official LoC dataset versioned at `tools/data/iso639-2.txt`
 
 ### Fixed
 - `PackageCode::ROLL` value
