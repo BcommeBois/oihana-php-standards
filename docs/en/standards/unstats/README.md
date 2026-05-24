@@ -9,6 +9,7 @@ This section covers classes in the [`org\unstats`](https://github.com/BcommeBois
 | Class | Description |
 |---|---|
 | [`UNM49`](UNM49.md) | Alpha-3 country and area codes (FRA, USA, JPN, …) |
+| [`UNM49Numeric`](UNM49Numeric.md) | Numeric 3-digit codes for countries + regions (001 World, 250 France, 419 Latin America, …) |
 
 ## See also
 

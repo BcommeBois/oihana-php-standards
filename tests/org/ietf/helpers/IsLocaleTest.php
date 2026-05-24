@@ -90,9 +90,18 @@ final class IsLocaleTest extends TestCase
         $this->assertTrue(isLocale('und', strict: true));
     }
 
-    public function testStrictSkipsNumericRegion(): void
+    public function testStrictAcceptsKnownNumericRegion(): void
     {
-        // 3-digit region (UN M49), no class available → skip cross-check
-        $this->assertTrue(isLocale('es-419', strict: true));
+        // 3-digit region (UN M49) cross-validated against UNM49Numeric
+        $this->assertTrue(isLocale('es-419', strict: true));   // Latin America and the Caribbean
+        $this->assertTrue(isLocale('en-001', strict: true));   // World
+        $this->assertTrue(isLocale('fr-150', strict: true));   // Europe
+    }
+
+    public function testStrictRejectsUnknownNumericRegion(): void
+    {
+        // 999 is syntactically valid but not assigned in UN M49
+        $this->assertTrue(isLocale('es-999'));                 // tolerant: syntax OK
+        $this->assertFalse(isLocale('es-999', strict: true));  // strict: unknown M49 code
     }
 }

@@ -9,6 +9,7 @@ Cette section couvre les classes du namespace [`org\unstats`](https://github.com
 | Classe | Description |
 |---|---|
 | [`UNM49`](UNM49.md) | Codes alpha-3 pays et zones (FRA, USA, JPN, …) |
+| [`UNM49Numeric`](UNM49Numeric.md) | Codes numériques 3 chiffres pays + régions (001 World, 250 France, 419 Latin America, …) |
 
 ## Voir aussi
 

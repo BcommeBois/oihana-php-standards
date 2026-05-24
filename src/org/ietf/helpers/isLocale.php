@@ -5,6 +5,7 @@ namespace org\ietf\helpers;
 use org\iso\ISO15924;
 use org\iso\ISO3166_1;
 use org\iso\ISO639_1;
+use org\unstats\UNM49Numeric;
 
 /**
  * Validates whether a string is a valid IETF BCP 47 / RFC 5646 locale tag.
@@ -23,13 +24,14 @@ use org\iso\ISO639_1;
  * intentionally **not** supported in this minimal implementation.
  *
  * When `$strict` is true, the parsed components are cross-validated against
- * the existing ISO classes:
+ * the existing standards classes:
  * - `language` (2 letters)  → {@see ISO639_1}
  * - `script`                 → {@see ISO15924}
  * - `region`   (2 letters)  → {@see ISO3166_1}
+ * - `region`   (3 digits)   → {@see UNM49Numeric}
  *
- * 3-letter languages and 3-digit regions are not cross-validated (no
- * ISO 639-2/3 nor UN M49 class available yet).
+ * 3-letter languages are not cross-validated (ISO 639-2/3 classes are not
+ * available yet — see the future `org\iso\ISO639_2` and `org\iso\ISO639_5`).
  *
  * @param string $tag    The locale tag to validate
  * @param bool   $strict If true, cross-validate against ISO classes (default: false)
@@ -78,10 +80,18 @@ function isLocale( string $tag , bool $strict = false ): bool
         return false ;
     }
 
-    // Region: 2 letters → ISO 3166-1 ; 3 digits → not validated (UN M49)
-    if ( $parsed[ 'region' ] !== null && ctype_alpha( $parsed[ 'region' ] ) && !ISO3166_1::includes( $parsed[ 'region' ] ) )
+    // Region: 2 letters → ISO 3166-1 ; 3 digits → UN M49 numeric
+    if ( $parsed[ 'region' ] !== null )
     {
-        return false ;
+        if ( ctype_alpha( $parsed[ 'region' ] ) && !ISO3166_1::includes( $parsed[ 'region' ] ) )
+        {
+            return false ;
+        }
+
+        if ( ctype_digit( $parsed[ 'region' ] ) && !UNM49Numeric::includes( $parsed[ 'region' ] ) )
+        {
+            return false ;
+        }
     }
 
     return true ;

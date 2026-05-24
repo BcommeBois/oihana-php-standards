@@ -30,6 +30,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 #### Other ISO standards
 - ISO 3166-1 alpha-2 country code constants
 
+#### UN M49 numeric codes (`org\unstats`)
+- `UNM49Numeric` — 3-digit numeric codes for the 248 countries/areas and 37 geographical regions of the UN M49 standard (001 World, 019 Americas, 142 Asia, 150 Europe, 419 Latin America and the Caribbean, …); constants prefixed with `M_` (PHP identifier constraint)
+- `org\ietf\helpers\isLocale` strict mode now cross-validates 3-digit region subtags against `UNM49Numeric` (e.g. `es-419` accepted, `es-999` rejected)
+
+#### Tooling
+- `tools/generate-unm49-numeric.php` — maintenance script to regenerate `UNM49Numeric` from a curated dataset (outside composer autoload)
+
 ### Fixed
 - `PackageCode::ROLL` value
 - `PackageCode::PLATES` value
