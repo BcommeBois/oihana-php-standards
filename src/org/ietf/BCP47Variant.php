@@ -35,9 +35,9 @@ use oihana\reflect\traits\ConstantsTrait;
  *   BCP47Variant::includes('1996');  // true
  *   BCP47Variant::includes('xyz');   // false
  *
- * @see \org\ietf\Locale
- * @see \org\ietf\BCP47Grandfathered Legacy grandfathered tags (full tags, not subtags)
- * @see \org\ietf\BCP47Redundant     Redundant registered tags
+ * @see Locale
+ * @see BCP47Grandfathered Legacy grandfathered tags (full tags, not subtags)
+ * @see BCP47Redundant     Redundant registered tags
  * @see https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry IANA registry
  * @see https://www.rfc-editor.org/rfc/rfc5646#section-2.2.5 RFC 5646 §2.2.5 — Variant Subtags
  *

@@ -112,7 +112,7 @@ function isLocale( string $tag , bool $strict = false ): bool
  *
  * @param string $tag The locale tag to parse
  *
- * @return array{language:string,script:?string,region:?string,variants:array<int,string>,privateUse:?string}|null
+ * @return array|null :?string,region:?string,variants:array<int,string>,privateUse:?string}|null
  *
  * @package org\ietf\helpers
  * @author  Marc Alcaraz (ekameleon)
