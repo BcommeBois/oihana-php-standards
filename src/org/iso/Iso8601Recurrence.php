@@ -139,9 +139,7 @@ class Iso8601Recurrence
         } ;
 
         $period  = $this->period() ;
-        $current = $this->_interval->start->dateTime instanceof DateTimeImmutable
-            ? $this->_interval->start->dateTime
-            : DateTimeImmutable::createFromInterface( $this->_interval->start->dateTime ) ;
+        $current = $this->_interval->start->dateTime ;
 
         for ( $i = 0 ; $i < $limit ; $i++ )
         {
