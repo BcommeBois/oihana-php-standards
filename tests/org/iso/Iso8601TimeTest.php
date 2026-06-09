@@ -93,4 +93,10 @@ class Iso8601TimeTest extends TestCase
         $this->assertEquals(45, $time->minutes);
         $this->assertEquals(1, $time->seconds);
     }
+
+    public function testToStringReturnsIso(): void
+    {
+        $time = new Iso8601Time('23:45:01Z');
+        $this->assertSame('T23:45:01Z', (string) $time);
+    }
 }

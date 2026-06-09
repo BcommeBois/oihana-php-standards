@@ -292,4 +292,43 @@ class Iso8601DurationTest extends TestCase
         $this->assertSame(5, $duration->months);
         $this->assertSame(14, $duration->days);
     }
+
+    /**
+     * Tests that addTo returns a new date and leaves the original untouched.
+     */
+    public function testAddToReturnsNewDateAndLeavesOriginalUntouched(): void
+    {
+        $duration = new Iso8601Duration('P1Y2M3D');
+        $base     = new DateTime('2024-01-10 00:00:00');
+
+        $result = $duration->addTo($base);
+
+        $this->assertSame('2025-03-13', $result->format('Y-m-d'));
+        $this->assertSame('2024-01-10', $base->format('Y-m-d'));
+        $this->assertNotSame($base, $result);
+    }
+
+    /**
+     * Tests that subtractFrom returns a new date and leaves the original untouched.
+     */
+    public function testSubtractFromReturnsNewDateAndLeavesOriginalUntouched(): void
+    {
+        $duration = new Iso8601Duration('P5D');
+        $base     = new DateTime('2024-01-10 00:00:00');
+
+        $result = $duration->subtractFrom($base);
+
+        $this->assertSame('2024-01-05', $result->format('Y-m-d'));
+        $this->assertSame('2024-01-10', $base->format('Y-m-d'));
+        $this->assertNotSame($base, $result);
+    }
+
+    /**
+     * Tests that string casting returns the ISO 8601 representation.
+     */
+    public function testToStringReturnsIso(): void
+    {
+        $duration = new Iso8601Duration('P1Y2M3D');
+        $this->assertSame('P1Y2M3D', (string) $duration);
+    }
 }
