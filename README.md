@@ -16,10 +16,10 @@ It is designed for **strong typing**, **validation** and **easy lookups** in you
 
 Full documentation is available in two languages:
 
-- 🇬🇧 **[English documentation](docs/en/README.md)**
-- 🇫🇷 **[Documentation française](docs/fr/README.md)**
+- 🇬🇧 **[English documentation](wiki/en/README.md)**
+- 🇫🇷 **[Documentation française](wiki/fr/README.md)**
 
-Quick links: [Getting started](docs/en/getting-started.md) · [ConstantsTrait](docs/en/guides/constants-trait.md) · [Value-objects](docs/en/guides/value-objects.md) · [Helpers convention](docs/en/guides/helpers.md)
+Quick links: [Getting started](wiki/en/getting-started.md) · [ConstantsTrait](wiki/en/guides/constants-trait.md) · [Value-objects](wiki/en/guides/value-objects.md) · [Helpers convention](wiki/en/guides/helpers.md)
 
 ---
 
@@ -37,11 +37,11 @@ composer require oihana/php-standards
 
 | Namespace | Coverage |
 |---|---|
-| [`org\iso`](docs/en/standards/iso/README.md) | ISO 8601 (date/time/duration/interval/recurrence + format), ISO 3166-1, ISO 639-1, ISO 4217, ISO 15924 |
-| [`org\ietf`](docs/en/standards/ietf/README.md) | BCP 47 / RFC 5646 locale tags |
-| [`org\unece\uncefact`](docs/en/standards/unece/README.md) | UN/CEFACT units of measure (Rec. 20) and package types (Rec. 21) |
-| [`org\unstats`](docs/en/standards/unstats/README.md) | UN M49 country/area codes |
-| [`org\common`](docs/en/standards/common/README.md) | Cross-standard format catalogs (date, number) |
+| [`org\iso`](wiki/en/standards/iso/README.md) | ISO 8601 (date/time/duration/interval/recurrence + format), ISO 3166-1, ISO 639-1, ISO 4217, ISO 15924 |
+| [`org\ietf`](wiki/en/standards/ietf/README.md) | BCP 47 / RFC 5646 locale tags |
+| [`org\unece\uncefact`](wiki/en/standards/unece/README.md) | UN/CEFACT units of measure (Rec. 20) and package types (Rec. 21) |
+| [`org\unstats`](wiki/en/standards/unstats/README.md) | UN M49 country/area codes |
+| [`org\common`](wiki/en/standards/common/README.md) | Cross-standard format catalogs (date, number) |
 
 ---
 
@@ -66,7 +66,7 @@ new Locale('zh-Hant-TW', strict: true);        // OK
 new Locale('zz-ZZ', strict: true);             // throws
 ```
 
-Many more examples in the [documentation](docs/en/README.md).
+Many more examples in the [documentation](wiki/en/README.md).
 
 ---
 
