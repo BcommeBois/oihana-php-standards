@@ -50,10 +50,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - `tools/generate-iso639-5.php` — generator script that parses the LoC TSV dataset versioned at `tools/data/iso639-5.tsv`
 - `tools/generate-bcp47-iana.php` — single generator script that parses the IANA Language Subtag Registry (versioned at `tools/data/iana-language-subtag-registry.txt`, 731 KB) and can produce `BCP47Variant`, `BCP47Grandfathered`, `BCP47Redundant` (selectable via `--variant` / `--grandfathered` / `--redundant` flags). Only `BCP47Variant` is generated in this release; the two others come in a follow-up.
 
+#### Documentation
+- phpDocumentor API documentation: `phpdoc.xml` configuration and a `composer doc` script that generates the site under `docs/`.
+- Custom phpDocumentor template (`.phpdoc/template/`) extending the default one with a README-based landing page (logo, badges, quick links) and the namespace table of contents moved to the bottom of the index.
+- A GitHub Actions workflow (`.github/workflows/docs.yml`) that builds the documentation and deploys it to GitHub Pages on every push to `main`.
+
+### Changed
+- Moved the hand-written bilingual (en/fr) documentation from `docs/` to `wiki/`; the `docs/` directory is now reserved for the generated phpDocumentor site and is no longer versioned.
+
 ### Fixed
 - `PackageCode::ROLL` value
 - `PackageCode::PLATES` value
 - Rename the `ISO639_1` class (use the `_` separator)
+- `composer.json` `homepage` pointed to `oihana-php-schema`; now points to `oihana-php-standards`.
 
 ## [1.0.0] - 2025-08-13
 

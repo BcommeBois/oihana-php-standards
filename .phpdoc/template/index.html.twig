@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="phpdocumentor-section">
+
+<a href="https://github.com/BcommeBois/oihana-php-standards" class="phpdocumentor-title__link">
+    <img src="assets/images/oihana-php-standards-logo-inline-512x160.png" alt="Oihana PHP Standards" style="width: 256px; height: 80px;"/>
+</a>
+
+<br/>
+
+<h2>oihana-php-standards</h2>
+<p>A library of <strong>constants</strong>, <strong>value-objects</strong> and <strong>helpers</strong> built on top of international standards (ISO, IETF, UN/CEFACT, UN M49). Designed for <strong>strong typing</strong>, <strong>validation</strong> and <strong>easy lookups</strong> in your PHP 8.4+ applications.</p>
+
+<div class="badges">
+  <a href="https://packagist.org/packages/oihana/php-standards" target="_blank">
+    <img src="https://img.shields.io/packagist/v/oihana/php-standards.svg?style=flat-square" alt="Latest Version"/>
+  </a>
+  <a href="https://packagist.org/packages/oihana/php-standards" target="_blank">
+    <img src="https://img.shields.io/packagist/dt/oihana/php-standards.svg?style=flat-square" alt="Total Downloads"/>
+  </a>
+  <a href="https://github.com/BcommeBois/oihana-php-standards/blob/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/packagist/l/oihana/php-standards.svg?style=flat-square" alt="License"/>
+  </a>
+</div>
+
+<h3>📚 Documentation</h3>
+<p>Full API documentation is published at:</p>
+<p>
+    <a href="https://bcommebois.github.io/oihana-php-standards" target="_blank">https://bcommebois.github.io/oihana-php-standards</a>
+</p>
+<p>Guides and standards references are available in two languages:</p>
+<ul>
+    <li>🇬🇧 <a href="https://github.com/BcommeBois/oihana-php-standards/blob/main/wiki/en/README.md" target="_blank">English documentation</a></li>
+    <li>🇫🇷 <a href="https://github.com/BcommeBois/oihana-php-standards/blob/main/wiki/fr/README.md" target="_blank">Documentation française</a></li>
+</ul>
+
+<h3>🔗 Project on GitHub</h3>
+<p>View the full source code and contribute on GitHub:</p>
+<p>
+    <a href="https://github.com/BcommeBois/oihana-php-standards" target="_blank">
+        https://github.com/BcommeBois/oihana-php-standards
+    </a>
+</p>
+
+<h3>📦 Installation</h3>
+<p>Requires <a href="https://php.net/releases/" target="_blank">PHP 8.4+</a> (uses property hooks). Install via <a href="https://getcomposer.org/" target="_blank">Composer</a>:</p>
+<pre class="language-bash prettyprint">composer require oihana/php-standards</pre>
+
+<h3>🗂 What's inside</h3>
+<table>
+    <thead>
+        <tr><th>Namespace</th><th>Coverage</th></tr>
+    </thead>
+    <tbody>
+        <tr><td><code>org\iso</code></td><td>ISO 8601 (date/time/duration/interval/recurrence + format), ISO 3166-1, ISO 639-1, ISO 4217, ISO 15924</td></tr>
+        <tr><td><code>org\ietf</code></td><td>BCP 47 / RFC 5646 locale tags</td></tr>
+        <tr><td><code>org\unece\uncefact</code></td><td>UN/CEFACT units of measure (Rec. 20) and package types (Rec. 21)</td></tr>
+        <tr><td><code>org\unstats</code></td><td>UN M49 country/area codes</td></tr>
+        <tr><td><code>org\common</code></td><td>Cross-standard format catalogs (date, number)</td></tr>
+    </tbody>
+</table>
+
+<h3>💡 At a glance</h3>
+<pre class="language-php prettyprint">use org\iso\ISO4217;
+use org\iso\Iso8601DateTime;
+use org\ietf\Locale;
+
+// Constants with built-in validation/lookup
+ISO4217::EUR;                                  // "EUR"
+ISO4217::includes('XYZ');                      // false
+
+// ISO 8601 value-objects with property hooks
+$dt = new Iso8601DateTime('2026-05-14T08:15:30+02:00');
+$dt->datePart->year;                           // 2026
+$dt->timePart->hours;                          // 8
+
+// BCP 47 locales with cross-validation against ISO
+new Locale('zh-Hant-TW', strict: true);        // OK
+new Locale('zz-ZZ', strict: true);             // throws
+</pre>
+
+<h3>✅ Running Unit Tests</h3>
+<p>Run all unit tests:</p>
+<pre class="language-bash prettyprint">composer test</pre>
+
+<h3>🗒️ Changelog</h3>
+<p>See <a href="https://github.com/BcommeBois/oihana-php-standards/blob/main/CHANGELOG.md" target="_blank">CHANGELOG.md</a> for notable changes.</p>
+
+<h3>📄 License</h3>
+<p>This project is licensed under the <strong><a href="https://www.mozilla.org/en-US/MPL/2.0/" target="_blank">Mozilla Public License 2.0 (MPL-2.0)</a></strong>.</p>
+
+<h3>🔗 Related packages</h3>
+<ul>
+    <li><code>oihana/php-core</code> – core helpers and utilities used by this library: <a href="https://github.com/BcommeBois/oihana-php-core" target="_blank">https://github.com/BcommeBois/oihana-php-core</a></li>
+    <li><code>oihana/php-reflect</code> – reflection and hydration utilities: <a href="https://github.com/BcommeBois/oihana-php-reflect" target="_blank">https://github.com/BcommeBois/oihana-php-reflect</a></li>
+</ul>
+
+<h3>👤 About the author</h3>
+<ul>
+    <li><strong>Author:</strong> Marc ALCARAZ (aka <em>eKameleon</em>)</li>
+    <li><strong>Website:</strong> <a href="http://www.ooop.fr" target="_blank">www.ooop.fr</a></li>
+    <li><strong>Email:</strong> <a href="mailto:marc@ooop.fr">marc@ooop.fr</a></li>
+</ul>
+
+{% set node = project.namespace %}
+
+{{ include('components/table-of-contents.html.twig', {
+    'node': project.namespace,
+    'namespaces': usesNamespaces or not usesPackages ? node.children : [],
+    'packages': usesPackages ? project.package.children : []
+}) }}
+
+{{ include('components/constants.html.twig', {'node': project.namespace}) }}
+{{ include('components/functions.html.twig', {'node': project.namespace}) }}
+
+</section>
+{% endblock %}
