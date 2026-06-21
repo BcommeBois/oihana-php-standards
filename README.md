@@ -14,7 +14,9 @@ It is designed for **strong typing**, **validation** and **easy lookups** in you
 
 ## 📚 Documentation
 
-Full documentation is available in two languages:
+📖 **[API documentation](https://bcommebois.github.io/oihana-php-standards)** — the full phpDocumentor API reference (classes, methods, constants).
+
+Guides and standards references are available in two languages:
 
 - 🇬🇧 **[English documentation](wiki/en/README.md)**
 - 🇫🇷 **[Documentation française](wiki/fr/README.md)**
