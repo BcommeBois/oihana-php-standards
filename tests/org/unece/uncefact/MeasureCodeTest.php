@@ -40,6 +40,36 @@ class MeasureCodeTest extends TestCase
         $this->assertEquals($expected, $code);
     }
 
+    /* --------------------------------------------------------------------
+       Density units
+       ------------------------------------------------------------------ */
+
+    public function testKilogramPerCubicMeter(): void
+    {
+        $code = MeasureCode::KILOGRAM_PER_CUBIC_METER;
+
+        $this->assertSame('KMQ' , $code);
+        $this->assertSame('Kilogram per cubic metre' , MeasureCode::getName($code));
+        $this->assertSame('kg/m³' , MeasureCode::getSymbol($code));
+        $this->assertSame($code , MeasureCode::getFromName('Kilogram per cubic metre'));
+        $this->assertSame($code , MeasureCode::getFromSymbol('kg/m³'));
+    }
+
+    /* --------------------------------------------------------------------
+       Degrees units
+       ------------------------------------------------------------------ */
+
+    public function testAngularDegree(): void
+    {
+        $code = MeasureCode::ANGULAR;
+
+        $this->assertSame('DD' , $code);
+        $this->assertSame('Angular Degree' , MeasureCode::getName($code));
+        $this->assertSame('°' , MeasureCode::getSymbol($code));
+        $this->assertSame($code , MeasureCode::getFromName('Angular Degree'));
+        $this->assertSame($code , MeasureCode::getFromSymbol('°'));
+    }
+
     public function testGetNameWithUnknownCode(): void
     {
         $this->assertNull(MeasureCode::getName('XXX'));

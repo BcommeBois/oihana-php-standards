@@ -42,6 +42,36 @@ class MeasureNameTest extends TestCase
     }
 
     /* --------------------------------------------------------------------
+       Density units
+       ------------------------------------------------------------------ */
+
+    public function testKilogramPerCubicMeter(): void
+    {
+        $name = MeasureName::KILOGRAM_PER_CUBIC_METER;
+
+        $this->assertSame('Kilogram per cubic metre' , $name);
+        $this->assertSame(MeasureCode::KILOGRAM_PER_CUBIC_METER   , MeasureName::getCode($name));
+        $this->assertSame(MeasureSymbol::KILOGRAM_PER_CUBIC_METER , MeasureName::getSymbol($name));
+        $this->assertSame($name , MeasureName::getFromCode(MeasureCode::KILOGRAM_PER_CUBIC_METER));
+        $this->assertSame($name , MeasureName::getFromSymbol(MeasureSymbol::KILOGRAM_PER_CUBIC_METER));
+    }
+
+    /* --------------------------------------------------------------------
+       Degrees units
+       ------------------------------------------------------------------ */
+
+    public function testAngularDegree(): void
+    {
+        $name = MeasureName::ANGULAR;
+
+        $this->assertSame('Angular Degree' , $name);
+        $this->assertSame(MeasureCode::ANGULAR   , MeasureName::getCode($name));
+        $this->assertSame(MeasureSymbol::ANGULAR , MeasureName::getSymbol($name));
+        $this->assertSame($name , MeasureName::getFromCode(MeasureCode::ANGULAR));
+        $this->assertSame($name , MeasureName::getFromSymbol(MeasureSymbol::ANGULAR));
+    }
+
+    /* --------------------------------------------------------------------
        Unknown lookups should return null
        ------------------------------------------------------------------ */
 

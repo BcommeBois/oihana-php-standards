@@ -44,6 +44,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 #### BCP 47 Variant subtags (`org\ietf`)
 - `BCP47Variant` — 139 variant subtags from the IANA Language Subtag Registry (`1996`, `1901`, `valencia`, `fonipa`, `tarask`, `pinyin`, `wadegile`, `monoton`, `polyton`, `scotland`, `oxendict`, …). Numeric subtags are exposed via `V_`-prefixed constants (e.g. `V_1996 = '1996'`, `V_1606NICT = '1606nict'`) since PHP identifiers cannot start with a digit. Deprecated variants remain enumerated (their syntax is still valid for legacy content).
 
+#### UN/CEFACT units of measure (`org\unece\uncefact`)
+- Density units: `MeasureCode::KILOGRAM_PER_CUBIC_METER` (`KMQ`), `MeasureName::KILOGRAM_PER_CUBIC_METER` (`Kilogram per cubic metre`) and `MeasureSymbol::KILOGRAM_PER_CUBIC_METER` (`kg/m³`)
+
 #### Tooling
 - `tools/generate-unm49-numeric.php` — maintenance script to regenerate `UNM49Numeric` from a curated dataset (outside composer autoload)
 - `tools/generate-iso639-2.php` — generator script that parses the official LoC dataset versioned at `tools/data/iso639-2.txt`
@@ -59,6 +62,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Moved the hand-written bilingual (en/fr) documentation from `docs/` to `wiki/`; the `docs/` directory is now reserved for the generated phpDocumentor site and is no longer versioned.
 
 ### Fixed
+- `MeasureName::ANGULAR_DEGREE` renamed to `MeasureName::ANGULAR` to match `MeasureCode::ANGULAR` and `MeasureSymbol::ANGULAR`. The cross-class lookups resolve a value to its constant name, so the mismatch made `MeasureCode::getName('DD')`, `MeasureSymbol::getName('°')` and `MeasureName::getCode('Angular Degree')` return `null`. **Breaking**: use `MeasureName::ANGULAR` instead of `MeasureName::ANGULAR_DEGREE` (the value `'Angular Degree'` is unchanged).
 - `PackageCode::ROLL` value
 - `PackageCode::PLATES` value
 - Rename the `ISO639_1` class (use the `_` separator)

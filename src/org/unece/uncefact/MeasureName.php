@@ -162,8 +162,14 @@ class MeasureName
     // Degrees Units
     // =====================================================================
 
-    public const string ANGULAR_DEGREE = 'Angular Degree';
-    public const string RADIAN         = 'Radian';
+    public const string ANGULAR = 'Angular Degree';
+    public const string RADIAN  = 'Radian';
+
+    // =====================================================================
+    // Density Units
+    // =====================================================================
+
+    public const string KILOGRAM_PER_CUBIC_METER = 'Kilogram per cubic metre';
 
     // =====================================================================
     // Common Miscellaneous Units

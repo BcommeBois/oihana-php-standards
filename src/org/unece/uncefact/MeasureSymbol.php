@@ -165,6 +165,12 @@ class MeasureSymbol
     public const string RADIAN  = 'rad'; // Radian
 
     // =====================================================================
+    // Density Units
+    // =====================================================================
+
+    public const string KILOGRAM_PER_CUBIC_METER = 'kg/m³'; // Kilogram per cubic metre
+
+    // =====================================================================
     // Common Miscellaneous Units
     // =====================================================================
 

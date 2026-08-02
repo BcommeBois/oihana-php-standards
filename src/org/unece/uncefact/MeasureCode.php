@@ -167,6 +167,12 @@ class MeasureCode
     public const string RADIAN  = 'RAD' ; // Radian
 
     // =====================================================================
+    // Density Units
+    // =====================================================================
+
+    public const string KILOGRAM_PER_CUBIC_METER = 'KMQ' ; // Kilogram per cubic metre
+
+    // =====================================================================
     // Common Miscellaneous Units
     // =====================================================================
 
