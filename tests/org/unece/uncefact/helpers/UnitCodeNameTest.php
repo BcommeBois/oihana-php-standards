@@ -42,7 +42,8 @@ final class UnitCodeNameTest extends TestCase
     public function testResolvesPackageCodes(): void
     {
         $this->assertSame('Box'    , unitCodeName('BX')) ;
-        $this->assertSame('Parcel' , unitCodeName('PA')) ;
+        $this->assertSame('Parcel' , unitCodeName('PC')) ;
+        $this->assertSame('Packet' , unitCodeName('PA')) ; // 'PA' is the packet, not the parcel
     }
 
     /* --------------------------------------------------------------------

@@ -408,7 +408,7 @@ class PackageName
     /**
      * A small rectangular box, typically made of cardboard, for holding matches (fr -> Boîte d'allumettes).
      */
-    public const string MATCH_BOX = 'Match Box';
+    public const string MATCH_BOX = 'Matchbox';
 
     /**
      * A set of containers that fit one inside the other, or a group of items housed together (fr -> Emboîtement, Jeu de boîtes).
@@ -431,10 +431,15 @@ class PackageName
     public const string PAIL = 'Pail';
 
     /**
-     * A wrapped package, usually of small to medium size, prepared for mailing or shipping (fr -> Colis, Paquet).
-     * Note: 'PA' is also used for "Packet" in some contexts.
+     * A wrapped package, usually of small to medium size, prepared for mailing or shipping (fr -> Colis).
      */
     public const string PARCEL = 'Parcel';
+
+    /**
+     * A small wrapped or boxed quantity, smaller than a parcel (fr -> Paquet).
+     * Rec 21 assigns 'PA' to the packet and 'PC' to the parcel — this class had them merged.
+     */
+    public const string PACKET = 'Packet';
 
     /**
      * A flat transport structure, often made of wood,
@@ -467,7 +472,7 @@ class PackageName
     /**
      * A pallet shrink, wrapped (fr -> Palette, rétractable, emballée)
      */
-    public const string PALLET_SHRINK_WRAPPED = 'Pallet, shrink, wrapped';
+    public const string PALLET_SHRINK_WRAPPED = 'Pallet, shrinkwrapped';
 
     /**
      * A hollow cylindrical structure, often used for conveying liquids or gases (fr -> Tuyau, Conduit).

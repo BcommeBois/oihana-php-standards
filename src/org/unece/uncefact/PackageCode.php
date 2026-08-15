@@ -431,10 +431,15 @@ class PackageCode
     public const string PAIL = 'PL';
 
     /**
-     * A wrapped package, usually of small to medium size, prepared for mailing or shipping (fr -> Colis, Paquet).
-     * Note: 'PA' is also used for "Packet" in some contexts.
+     * A wrapped package, usually of small to medium size, prepared for mailing or shipping (fr -> Colis).
      */
-    public const string PARCEL = 'PA';
+    public const string PARCEL = 'PC';
+
+    /**
+     * A small wrapped or boxed quantity, smaller than a parcel (fr -> Paquet).
+     * Rec 21 assigns 'PA' to the packet and 'PC' to the parcel — this class had them merged.
+     */
+    public const string PACKET = 'PA';
 
     /**
      * A flat transport structure, often made of wood,

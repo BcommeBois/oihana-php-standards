@@ -48,6 +48,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Density units: `MeasureCode::KILOGRAM_PER_CUBIC_METER` (`KMQ`), `MeasureName::KILOGRAM_PER_CUBIC_METER` (`Kilogram per cubic metre`) and `MeasureSymbol::KILOGRAM_PER_CUBIC_METER` (`kg/m³`)
 - `org\unece\uncefact\helpers\unitCodeName` — resolves the official name of a unit code against both families, measures (Rec. 20) first and packages (Rec. 21) as a fallback; returns `null` for a `null`, unknown or wrongly-cased code. The two families are flattened into a single name: callers that must tell a unit that measures from a unit that merely holds should ask `MeasureCode::getName()` directly. No code is claimed by both families.
 
+#### UN/CEFACT package types (`org\unece\uncefact`)
+- `PackageCode::PACKET` (`PA`) and `PackageName::PACKET` (`Packet`) — the packet had no constant of its own, its code being held by `PARCEL`.
+
 #### Reference datasets and generator
 - `tools/generate-uncefact-rec20.php` — generates `MeasureCode`, `MeasureName` and `MeasureSymbol` from the official Rec 20 dataset. Supports `--dry-run`. Refuses to write when a selected code is absent from the dataset, is used twice, or when two constants would share a name or a symbol — the invariant a duplicated value would break in `ConstantsTrait::getConstant()`.
 - `tools/data/uncefact-rec20.csv` — the 2136 official unit codes, extracted from `rec20_Rev17e-2021.xlsx` (Annex II & III).
@@ -55,6 +58,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - `tools/data/uncefact-rec21.csv` — the 406 official package type codes (Rec 21 Rev 12).
 - `tools/data/unsd-m49.csv` — the 249 UNSD M49 countries and areas with their ISO alpha-2 and alpha-3 codes.
 - `tools/data/iso4217.csv` — the 178 ISO 4217 currency codes, list one published 2026-01-01.
+
+#### Conformance testing
+- `tests/org/unece/uncefact/PackageConformanceTest` — checks `PackageCode` and `PackageName` against `tools/data/uncefact-rec21.csv`: every code exists in Rec 21, every name matches the official wording, both classes declare the same constants, no value is duplicated. `PackageCode` is maintained by hand — one error in 108 entries did not justify a generator — so this test is what replaces one. It is what would have caught `PARCEL`, and it immediately surfaced two further wording drifts. Deliberate departures are declared in a `KNOWN_DEVIATIONS` list, which keeps the debt visible and bounded.
 
 #### Tooling
 - `tools/generate-unm49-numeric.php` — maintenance script to regenerate `UNM49Numeric` from a curated dataset (outside composer autoload)
@@ -79,6 +85,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Moved the hand-written bilingual (en/fr) documentation from `docs/` to `wiki/`; the `docs/` directory is now reserved for the generated phpDocumentor site and is no longer versioned.
 
 ### Fixed
+- **`PackageCode::PARCEL` — `'PA'` → `'PC'`.** In Rec 21 Rev 12, `PA` is the **packet**; the parcel is `PC`. The class merged the two and had no `PACKET` constant, so `PackageCode::getName('PA')` answered `Parcel` and no code resolved to a packet. **Breaking**: a stored `'PA'` meant as a parcel must be migrated to `'PC'`.
+- `PackageName::MATCH_BOX` — `'Match Box'` → `'Matchbox'`, and `PackageName::PALLET_SHRINK_WRAPPED` — `'Pallet, shrink, wrapped'` → `'Pallet, shrinkwrapped'`, to match the official wording.
 - `unitCodeName()` no longer has to arbitrate between the two families: correcting the codes against the official dataset removed the only two collisions instead of resolving them. `PT` and `DB` collided solely because `MeasureCode` declared them wrongly — in Rec 20 they are a pint and a dry pound, never a Point nor a Decibel. `MeasureCode` and `PackageCode` now share no value, which a test pins.
 - Documentation of `MeasureCode`, `MeasureName` and `MeasureSymbol`: the class examples referenced five classes that do not exist (`UnitCodes`, `UnitNames`, `UnitSymbols`, `MeasureNames`, `MeasureSymbols`) and documented `get()` as returning a `{"name":…,"unitCode":…,"unitText":…}` object, when it is inherited from `ConstantsTrait` and returns the raw value. `MeasureSymbol::getCode()` gave `'P1'` as a sample code, which is not declared anywhere. Examples are now runnable as written, and each class states that the three mirror each other and declare the same constant names — the invariant every cross lookup depends on.
 - `MeasureName::ANGULAR_DEGREE` renamed to `MeasureName::ANGULAR` to match `MeasureCode::ANGULAR` and `MeasureSymbol::ANGULAR`. The cross-class lookups resolve a value to its constant name, so the mismatch made `MeasureCode::getName('DD')`, `MeasureSymbol::getName('°')` and `MeasureName::getCode('Angular Degree')` return `null`. **Breaking**: use `MeasureName::ANGULAR` instead of `MeasureName::ANGULAR_DEGREE` (the value `'Angular Degree'` is unchanged).
