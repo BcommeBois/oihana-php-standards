@@ -60,9 +60,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - A GitHub Actions workflow (`.github/workflows/docs.yml`) that builds the documentation and deploys it to GitHub Pages on every push to `main`.
 
 ### Changed
+- `MeasureName::getSymbol()` parameter renamed from `$code` to `$name`, and `MeasureSymbol::getName()` parameter renamed from `$code` to `$symbol`; both were misnamed and neither ever received a code. **Breaking for named arguments only**: use `MeasureName::getSymbol(name: …)` and `MeasureSymbol::getName(symbol: …)`. Positional calls are unaffected.
 - Moved the hand-written bilingual (en/fr) documentation from `docs/` to `wiki/`; the `docs/` directory is now reserved for the generated phpDocumentor site and is no longer versioned.
 
 ### Fixed
+- Documentation of `MeasureCode`, `MeasureName` and `MeasureSymbol`: the class examples referenced five classes that do not exist (`UnitCodes`, `UnitNames`, `UnitSymbols`, `MeasureNames`, `MeasureSymbols`) and documented `get()` as returning a `{"name":…,"unitCode":…,"unitText":…}` object, when it is inherited from `ConstantsTrait` and returns the raw value. `MeasureSymbol::getCode()` gave `'P1'` as a sample code, which is not declared anywhere. Examples are now runnable as written, and each class states that the three mirror each other and declare the same constant names — the invariant every cross lookup depends on.
 - `MeasureName::ANGULAR_DEGREE` renamed to `MeasureName::ANGULAR` to match `MeasureCode::ANGULAR` and `MeasureSymbol::ANGULAR`. The cross-class lookups resolve a value to its constant name, so the mismatch made `MeasureCode::getName('DD')`, `MeasureSymbol::getName('°')` and `MeasureName::getCode('Angular Degree')` return `null`. **Breaking**: use `MeasureName::ANGULAR` instead of `MeasureName::ANGULAR_DEGREE` (the value `'Angular Degree'` is unchanged).
 - `PackageCode::ROLL` value
 - `PackageCode::PLATES` value

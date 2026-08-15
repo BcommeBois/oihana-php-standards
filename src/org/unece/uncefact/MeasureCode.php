@@ -10,17 +10,24 @@ use oihana\reflect\traits\ConstantsTrait;
  * This class provides an extended selection of the most commonly used codes
  * across various commercial and logistical contexts.
  *
+ * It mirrors {@see MeasureName} and {@see MeasureSymbol} : the three classes declare
+ * the same constant names, which is what the cross lookups below rely on.
+ *
  * For an exhaustive list and official documentation, please consult:
  * @see https://unece.org/trade/uncefact/cl-recommendations
  * @example
- * ```
- * <?php
- * $logger->info( MeasureCode::PERCENT ) ; // 'PC1'
- * $logger->info( MeasureCode::getName( UnitCodes::PERCENT ) ) ; // 'Percent'
- * $logger->info( MeasureCode::getSymbol( UnitCodes::PERCENT ) ) ; // '%'
- * $logger->info( json_encode( MeasureCode::get( UnitCodes::PERCENT ) ) ); // {"name":"Percent","unitCode":"PC1","unitText":"%"}
- * $logger->info( MeasureCode::getFromName( UnitNames::PERCENT ) ) ; // 'PC1'
- * $logger->info( MeasureCode::getFromSymbol( UnitSymbols::PERCENT ) ) ; // 'PC1'
+ * ```php
+ * use org\unece\uncefact\MeasureCode;
+ * use org\unece\uncefact\MeasureName;
+ * use org\unece\uncefact\MeasureSymbol;
+ *
+ * MeasureCode::PERCENT ; // 'PC1'
+ *
+ * MeasureCode::getName  ( MeasureCode::PERCENT ) ; // 'Percent'
+ * MeasureCode::getSymbol( MeasureCode::PERCENT ) ; // '%'
+ *
+ * MeasureCode::getFromName  ( MeasureName::PERCENT   ) ; // 'PC1'
+ * MeasureCode::getFromSymbol( MeasureSymbol::PERCENT ) ; // 'PC1'
  * ```
  */
 class MeasureCode
@@ -217,9 +224,9 @@ class MeasureCode
     // =====================================================================
 
     /**
-     * Returns the code with a specific unit code name.
-     * @param string $name
-     * @return string|null
+     * Returns the code matching a specific unit name.
+     * @param string $name The UN/CEFACT name (e.g., 'Kilogram').
+     * @return string|null The UN/CEFACT code (e.g., 'KGM') or null if not found.
      */
     public static function getFromName( string $name ): ?string
     {
@@ -227,9 +234,9 @@ class MeasureCode
     }
 
     /**
-     * Returns the code from a specific unit code symbol.
-     * @param string $symbol
-     * @return string|null
+     * Returns the code matching a specific unit symbol.
+     * @param string $symbol The UN/CEFACT symbol (e.g., 'kg').
+     * @return string|null The UN/CEFACT code (e.g., 'KGM') or null if not found.
      */
     public static function getFromSymbol( string $symbol ): ?string
     {
@@ -238,8 +245,8 @@ class MeasureCode
 
     /**
      * Returns the official UN/CEFACT name for a given code.
-     * @param string $code
-     * @return string|null The UN/CEFACT name or null if not found.
+     * @param string $code The UN/CEFACT code (e.g., 'KGM').
+     * @return string|null The UN/CEFACT name (e.g., 'Kilogram') or null if not found.
      */
     public static function getName( string $code ): ?string
     {
@@ -252,8 +259,8 @@ class MeasureCode
 
     /**
      * Returns the official UN/CEFACT symbol for a given code.
-     * @param string $code
-     * @return string|null The UN/CEFACT code (e.g., 'KGM') or null if not found.
+     * @param string $code The UN/CEFACT code (e.g., 'KGM').
+     * @return string|null The UN/CEFACT symbol (e.g., 'kg') or null if not found.
      */
     public static function getSymbol( string $code ): ?string
     {
