@@ -1,0 +1,430 @@
+code,name,numeric,status,description
+1A,"Drum, steel",34.0,,
+1B,"Drum, aluminium",34.0,,
+1D,"Drum, plywood",34.0,,
+1F,"Container, flexible",93.0,,A packaging container of flexible construction.
+1G,"Drum, fibre",34.0,,
+1W,"Drum, wooden",34 or 35,,
+2C,"Barrel, wooden",44 or 45,,
+3A,"Jerrican, steel",23 or 33,,
+3H,"Jerrican, plastic",23 or 33,,
+43.0,"Bag, super bulk",64.0,,A cloth plastic or paper based bag having the dimensions of the pallet on which it is constructed.
+44.0,"Bag, polybag",62 or 63,,"A type of plastic bag, typically used to wrap promotional pieces, publications, product samples, and/or catalogues."
+4A,"Box, steel",21 to 25,,
+4B,"Box, aluminium",21 to 25,,
+4C,"Box, natural wood",21 to 25,,
+4D,"Box, plywood",21 to 25,,
+4F,"Box, reconstituted wood",21 to 25,,
+4G,"Box, fibreboard",21 to 25,,
+4H,"Box, plastic",21 to 25,,
+5H,"Bag, woven plastic",62 to 64,,
+5L,"Bag, textile",62 to 64,,
+5M,"Bag, paper",62 to 64,,
+6H,"Composite packaging, plastic receptacle","24 or 25 or
+33 or 34",,
+6P,"Composite packaging, glass receptacle","23 or 24 or 25 or
+33 or 34 or 62 or
+63",,
+7A,"Case, car",22 or 23,,A type of portable container designed to store equipment for carriage in an automobile.
+7B,"Case, wooden",24 or 25,,A case made of wood for retaining substances or articles.
+8A,"Pallet, wooden",24 or 25,,"A platform or open-ended box, made of wood, on which goods are retained for ease of mechanical handling during transport and storage."
+8B,"Crate, wooden",23 to 27,,"A receptacle, made of wood, on which goods are retained for ease of mechanical handling during transport and storage."
+8C,"Bundle, wooden",16.0,,Loose or unpacked pieces of wood tied or wrapped together.
+AA,"Intermediate bulk container, rigid plastic",23 to 26,,
+AB,"Receptacle, fibre","21 to 23 or
+31 to 33 or
+41 to 43",,Containment vessel made of fibre used for retaining substances or articles.
+AC,"Receptacle, paper","21 to 23 or
+31 to 33 or
+41 to 43",,Containment vessel made of paper for retaining substances or articles.
+AD,"Receptacle, wooden","21 to 23 or
+31 to 33 or
+41 to 43",,Containment vessel made of wood for retaining substances or articles.
+AE,Aerosol,42 or 43,,
+AF,"Pallet, modular, collars 80cms * 60cms",92.0,,Standard sized pallet of dimensions 80 centimeters by 60 centimeters (cms).
+AG,"Pallet, shrinkwrapped",92.0,,Pallet load secured with transparent plastic film that has been wrapped around and then shrunk tightly.
+AH,"Pallet, 100cms * 110cms",92.0,,Standard sized pallet of dimensions 100centimeters by 110 centimeters (cms).
+AI,Clamshell,21 to 23,,
+AJ,Cone,51.0,,Container used in the transport of linear material such as yarn.
+AL,Ball,46.0,,A spherical containment vessel for retaining substances or articles.
+AM,"Ampoule, non-protected",31.0,,
+AP,"Ampoule, protected",31.0,,
+AT,Atomizer,42 or 43,,
+AV,Capsule,92.0,,
+B4,Belt,93.0,,A band use to retain multiple articles together.
+BA,Barrel,44 or 45,,
+BB,Bobbin,91.0,,
+BC,Bottlecrate / bottlerack,29.0,,
+BD,Board,16.0,,
+BE,Bundle,61 to 65,,
+BF,"Balloon, non-protected",42 or 43,,
+BG,Bag,62 to 64,,A receptacle made of flexible material with an open or closed top.
+BH,Bunch,61 to 65,,
+BI,Bin,21 or 25,,
+BJ,Bucket,51.0,,
+BK,Basket,27.0,,
+BL,"Bale, compressed",65.0,,
+BM,Basin,51.0,,
+BN,"Bale, non-compressed",65.0,,
+BO,"Bottle, non-protected, cylindrical",32 or 33,,A narrow-necked cylindrical shaped vessel without external protective packing material.
+BP,"Balloon, protected",42 or 43,,
+BQ,"Bottle, protected cylindrical",32 or 33,,A narrow-necked cylindrical shaped vessel with external protective packing material.
+BR,Bar,16.0,,
+BS,"Bottle, non-protected, bulbous",42 or 43,,A narrow-necked bulb shaped vessel without external protective packing material.
+BT,Bolt,13.0,,
+BU,Butt,44 or 45,,
+BV,"Bottle, protected bulbous",42 or 43,,A narrow-necked bulb shaped vessel with external protective packing material.
+BW,"Box, for liquids",21 to 25,,
+BX,Box,21 to 25,,
+BY,"Board, in bundle/bunch/truss",16.0,,
+BZ,"Bars, in bundle/bunch/truss",16.0,,
+CA,"Can, rectangular",22.0,,
+CB,"Crate, beer",23 to 27,,
+CC,Churn,32 or 33,,
+CD,"Can, with handle and spout",22.0,,
+CE,Creel,27.0,,
+CF,Coffer,24.0,,
+CG,Cage,26.0,,
+CH,Chest,25.0,,
+CI,Canister,21 or 22,,
+CJ,Coffin,54.0,,
+CK,Cask,44 or 45,,
+CL,Coil,14.0,,
+CM,Card,67.0,,A flat package usually made of fibreboard from/to which product is often hung or attached.
+CN,"Container, not otherwise specified as transport equipment",25.0,,
+CO,"Carboy, non-protected",43.0,,
+CP,"Carboy, protected",43.0,,
+CQ,Cartridge,92.0,,Package containing a charge such as propelling explosive for firearms or ink toner for a printer.
+CR,Crate,24 to 25,,
+CS,Case,21 to 25,,
+CT,Carton,22 to 24,,
+CU,Cup,51.0,,
+CV,Cover,67.0,,
+CW,"Cage, roll",26.0,,
+CX,"Can, cylindrical",32.0,,
+CY,Cylinder,12.0,,
+CZ,Canvas,67.0,,
+DA,"Crate, multiple layer, plastic",23 to 25 or 27,,
+DB,"Crate, multiple layer, wooden",23 to 25 or 27,,
+DC,"Crate, multiple layer, cardboard",23 to 25 or 27,,
+DG,"Cage, Commonwealth Handling Equipment Pool  (CHEP)",26.0,,
+DH,"Box, Commonwealth Handling Equipment Pool (CHEP), Eurobox",27.0,,A box mounted on a pallet base under the control of CHEP.
+DI,"Drum, iron",34.0,,
+DJ,"Demijohn, non-protected",43.0,,
+DK,"Crate, bulk, cardboard",23 to 25 or 27,,
+DL,"Crate, bulk, plastic",23 to 25 or 27,,
+DM,"Crate, bulk, wooden",23 to 25 or 27,,
+DN,Dispenser,93.0,,
+DP,"Demijohn, protected",43.0,,
+DR,Drum,34.0,,
+DS,"Tray, one layer no cover, plastic",27.0,,
+DT,"Tray, one layer no cover, wooden",27.0,,
+DU,"Tray, one layer no cover, polystyrene",27.0,,
+DV,"Tray, one layer no cover, cardboard",27.0,,
+DW,"Tray, two layers no cover, plastic tray",27 or 29,,
+DX,"Tray, two layers no cover, wooden",27 or 29,,
+DY,"Tray, two layers no cover, cardboard",27 or 29,,
+EC,"Bag, plastic",62 to 64,,
+ED,"Case, with pallet base",23 to 25,,
+EE,"Case, with pallet base, wooden",23 to 25,,
+EF,"Case, with pallet base, cardboard",23 to 25,,
+EG,"Case, with pallet base, plastic",23 to 25,,
+EH,"Case, with pallet base, metal",23 to 25,,
+EI,"Case, isothermic",22 to 25,,
+EN,Envelope,67.0,,
+FB,Flexibag,65.0,,"A flexible containment bag made of plastic, typically for the transportation bulk non-hazardous cargoes using standard size shipping containers."
+FC,"Crate, fruit",23 to 27,,
+FD,"Crate, framed",26.0,,
+FE,Flexitank,65.0,,"A flexible containment tank made of plastic, typically for the transportation bulk non-hazardous cargoes using standard size shipping containers."
+FI,Firkin,44 or 45,,
+FL,Flask,42 or 43,,
+FO,Footlocker,23.0,,
+FP,Filmpack,67.0,,
+FR,Frame,26.0,,
+FT,Foodtainer,21 to 23,,
+FW,"Cart, flatbed",94.0,,Wheeled flat bedded device on which trays or other regular shaped items are packed for transportation purposes.
+FX,"Bag, flexible container",61 to 66,,
+GB,"Bottle, gas",31 or 35,,A narrow-necked metal cylinder for retention of liquefied or compressed gas.
+GI,Girder,16.0,,
+GL,"Container, gallon",32.0,,A container with a capacity of one gallon.
+GR,"Receptacle, glass","21 to 23 or
+31 to 33 or
+41 to 43",,Containment vessel made of glass for retaining substances or articles.
+GU,"Tray, containing horizontally stacked flat items",27.0,,Tray containing flat items stacked on top of one another.
+GY,"Bag, gunny",63 to 64,,"A sack made of gunny or burlap, used for transporting coarse commodities, such as grains, potatoes, and other agricultural products."
+GZ,"Girders, in bundle/bunch/truss",16.0,,
+HA,"Basket, with handle, plastic",27.0,,
+HB,"Basket, with handle, wooden",27.0,,
+HC,"Basket, with handle, cardboard",27.0,,
+HG,Hogshead,44 or 45,,
+HN,Hanger,93.0,,A purpose shaped device with a hook at the top for hanging items from a rail.
+HR,Hamper,23.0,,
+IA,"Package, display, wooden",21 to 23,,
+IB,"Package, display, cardboard",21 to 23,,
+IC,"Package, display, plastic",21 to 23,,
+ID,"Package, display, metal",21 to 23,,
+IE,"Package, show",21 to 23,,
+IF,"Package, flow",61 or 62,,"A flexible tubular package or skin, possibly transparent, often used for containment of foodstuffs (e.g. salami sausage)."
+IG,"Package, paper wrapped",21 to 23,,
+IH,"Drum, plastic",34.0,,
+IK,"Package, cardboard, with bottle grip-holes",21 to 23,,Packaging material made out of cardboard that facilitates the separation of individual glass or plastic bottles.
+IL,"Tray, rigid, lidded stackable (CEN TS 14482:2002)",27.0,,Lidded stackable rigid tray compliant with CEN TS 14482:2002.
+IN,Ingot,17.0,,
+IZ,"Ingots, in bundle/bunch/truss",17.0,,
+JB,"Bag, jumbo",65.0,,"A flexible containment bag, widely used for storage, transportation and handling of powder, flake or granular materials. Typically constructed from woven polypropylene (PP) fabric in the form of cubic bags."
+JC,"Jerrican, rectangular",23.0,,
+JG,Jug,41.0,,
+JR,Jar,41.0,,
+JT,Jutebag,61 or 65,,
+JY,"Jerrican, cylindrical",33.0,,
+KG,Keg,44 or 45,,
+KI,Kit,92.0,,A set of articles or implements used for a specific purpose.
+LE,Luggage,"21 to 23 or
+61 to 63",,"A collection of bags, cases and/or containers which hold personal belongings for a journey."
+LG,Log,12.0,,
+LT,Lot,01 to 03,,
+LU,Lug,23.0,,A wooden box for the transportation and storage of fruit or vegetables.
+LV,Liftvan,22 to 24,,A wooden or metal container used for packing household goods and personal effects.
+LZ,"Logs, in bundle/bunch/truss",12.0,,
+MA,"Crate, metal",23 to 25 or 27,,Containment box made of metal for retaining substances or articles.
+MB,"Bag, multiply",62 to 64,,
+MC,"Crate, milk",27.0,,
+ME,"Container, metal",23 to 25 or 27,,"A type of containment box made of metal for retaining substances or articles, not otherwise specified as transport equipment."
+MR,"Receptacle, metal","21 to 23 or
+31 to 33",,Containment vessel made of metal for retaining substances or articles.
+MS,"Sack, multi-wall",62 to 64,,
+MT,Mat,67.0,,
+MW,"Receptacle, plastic wrapped","21 to 23 or
+31 to 33 or
+41 to 43 or
+61 to 63",,Containment vessel wrapped with plastic for retaining substances or articles.
+MX,Matchbox,21.0,,
+NA,Not available,0.0,,
+NE,Unpacked or unpackaged,0.0,,
+NF,"Unpacked or unpackaged, single unit",0.0,,
+NG,"Unpacked or unpackaged, multiple units",0.0,,
+NS,Nest,24.0,,
+NT,Net,66.0,,
+NU,"Net, tube, plastic",66.0,,
+NV,"Net, tube, textile",66.0,,
+OA,"Pallet, CHEP 40 cm x 60 cm",92.0,,Commonwealth Handling Equipment Pool (CHEP) standard pallet of dimensions 40 centimeters x 60 centimeters.
+OB,"Pallet, CHEP 80 cm x 120 cm",92.0,,Commonwealth Handling Equipment Pool (CHEP) standard pallet of dimensions 80 centimeters x 120 centimeters.
+OC,"Pallet, CHEP 100 cm x 120 cm",92.0,,Commonwealth Handling Equipment Pool (CHEP) standard pallet of dimensions 100 centimeters x 120 centimeters.
+OD,"Pallet, AS 4068-1993",92.0,¦,Australian standard pallet of dimensions 116.5 centimeters x 116.5 centimeters.
+OE,"Pallet, ISO T11",92.0,,"ISO standard pallet of dimensions 110 centimeters x 110 centimeters, prevalent in Asia - Pacific region."
+OF,"Platform, unspecified weight or dimension",92.0,,A pallet equivalent shipping platform of unknown dimensions or unknown weight.
+OK,Block,17.0,,"A solid piece of a hard substance, such as granite, having one or more flat sides."
+OT,Octabin,25.0,,"A standard cardboard container of large dimensions for storing for example vegetables, granules of plastics or other dry products."
+OU,"Container, outer",23 to 25 or 27,,"A type of containment box that serves as the outer shipping container, not otherwise specified as transport equipment."
+OG,Pallet ISO 0 - 1/2 EURO Pallet,92.0,,Standard pallet with dimensions 80 X 60 cm.
+OH,Pallet ISO 1 - 1/1 EURO Pallet,92.0,,Standard pallet with dimensions 80 X 120 cm.
+OI,Pallet ISO 2 – 2/1 EURO Pallet,92.0,,Standard pallet with dimensions 100 X 120 cm.
+OJ,1/4 EURO Pallet,92.0,,Standard pallet with dimensions 60 X 40 cm.
+OL,1/8 EURO Pallet,92.0,,Standard pallet with dimensions 40 X 30 cm.
+OM,Synthetic pallet ISO 1,92.0,,A standard pallet with standard dimensions 80 x 120cm made of a synthetic material for hygienic reasons.
+ON,Synthetic pallet ISO 2,92.0,,A standard pallet with standard dimensions 100 x 120cm made of a synthetic material for hygienic reasons.
+OP,Wholesaler pallet,92.0,,Pallet provided by the wholesaler.
+OQ,Pallet 80 X 100 cm,92.0,,Pallet with dimensions 80 X 100 cm.
+OR,Pallet 60 X 100 cm,92.0,,Pallet with dimensions 60 X 100 cm.
+OS,Oneway pallet,92.0,,Pallet need not be returned to the point of expedition
+OV,Returnable pallet,92.0,,Pallet must be returned to the point of expedition.
+OW,"Large bag, pallet sized",92.0,,"A non-rigid container made of fabric, paper, plastic, etc, with an opening at the top which can be closed and which is suitable for use on pallets"
+OX,A wheeled pallet with raised rim (81 x 67 x 135),92.0,,A wheeled pallet with raised rim for the storing and transporting of loads. Dimensions: 81 x 67 x 135 cm (length x width x height).
+OY,A Wheeled pallet with raised rim (81 x 72 x 135),92.0,,A wheeled pallet with raised rim for the storing and transporting of loads. Dimensions: 81 x 72 x 135 cm (length x width x height).
+OZ,Wheeled pallet with raised rim ( 81 x 60 x 16),92.0,,A wheeled pallet with raised rim for the storing and transporting of loads. Dimensions: 81 x 60 x 16 cm (length x width x height).
+O1,Two sided cage on wheels with fixing strap,92.0,,A two sided cage mounted on wheels with fixing strap. Dimensions: 900 x 770 x 1513 cm (length x width x height).
+O2,Trolley,92.0,,"A low cart for the transportation and storage of groceries, milk, etc."
+O3,Oneway pallet ISO 0 - 1/2 EURO Pallet,92.0,,Oneway pallet with dimensions 80 X 60 cm.
+O4,Oneway pallet ISO 1 - 1/1 EURO Pallet,92.0,,Oneway pallet with dimensions 80 X 120 cm.
+O5,Oneway pallet ISO 2 - 2/1 EURO Pallet,92.0,,Oneway pallet with dimensions 100 X 120 cm.
+O6,Pallet with exceptional dimensions,92.0,,Pallet with non-standard dimensions
+O7,Wooden pallet  40 cm x 80 cm,92.0,,Wooden pallet with dimensions 40 cm x 80 cm.
+O8,Plastic pallet SRS 60 cm x 80 cm,92.0,,SRS (Svenska Retursystem) standard synthetic pallet of dimensions 60 cm x 80 cm.
+O9,Plastic pallet SRS 80 cm x 120 cm,92.0,,SRS (Svenska Retursystem) standard synthetic pallet of dimensions 80 cm x 120 cm.
+P1,CHEP pallet 60 cm x 80 cm,92.0,,Commonwealth Handling Equipment Pool (CHEP) standard pallet of dimensions 60 centimeters x 80 centimeters.
+P3,LPR pallet 60 cm x 80 cm,92.0,,LPR (La Pallet Rouge) standard pallet of dimensions 60 cm x 80 cm.
+P4,LPR pallet 80 cm x 120 cm,92.0,,LPR (La Pallet Rouge) standard pallet of dimensions 80 cm x 120 cm.
+P2,Pan,51.0,,"A shallow, wide, open container, usually of metal."
+PA,Packet,21 to 23,,Small package.
+PB,"Pallet, box Combined open-ended box and pallet",92.0,,
+PC,Parcel,"21 to 23 or
+61 to 63",,
+PD,"Pallet, modular, collars 80cms * 100cms",92.0,,Standard sized pallet of dimensions 80 centimeters by 100 centimeters (cms).
+PE,"Pallet, modular, collars 80cms * 120cms",92.0,,Standard sized pallet of dimensions 80 centimeters by 120 centimeters (cms).
+PF,Pen,26 or 27,,A small open top enclosure for retaining animals.
+PG,Plate,15.0,,
+PH,Pitcher,41.0,,
+PI,Pipe,11.0,,
+PJ,Punnet,27.0,,
+PK,Package,21 to 23,,Standard packaging unit.
+PL,Pail,51.0,,
+PN,Plank,16.0,,
+PO,Pouch,61.0,,
+PP,Piece,19.0,,A loose or unpacked article.
+PR,"Receptacle, plastic","21 to 23 or
+31 to 33 or
+41 to 43 or
+61 to 63",,Containment vessel made of plastic for retaining substances or articles.
+PT,Pot,41.0,,
+PU,Tray,27.0,,
+PV,"Pipes, in bundle/bunch/truss",11.0,,
+PX,Pallet,92.0,,"Platform or open-ended box, usually made of wood, on which goods are retained for ease of mechanical handling during transport and storage."
+PY,"Plates, in bundle/bunch/truss",15.0,,
+PZ,"Planks, in bundle/bunch/truss",16.0,,
+QA,"Drum, steel, non-removable head",34.0,,
+QB,"Drum, steel, removable head",34.0,,
+QC,"Drum, aluminium, non-removable head",34.0,,
+QD,"Drum, aluminium, removable head",34.0,,
+QF,"Drum, plastic, non-removable head",34.0,,
+QG,"Drum, plastic, removable head",34.0,,
+QH,"Barrel, wooden, bung type",44 or 45,,
+QJ,"Barrel, wooden, removable head",44 or 45,,
+QK,"Jerrican, steel, non-removable head",23 or 33,,
+QL,"Jerrican, steel, removable head",23 or 33,,
+QM,"Jerrican, plastic, non-removable head",23 or 33,,
+QN,"Jerrican, plastic, removable head",23 or 33,,
+QP,"Box, wooden, natural wood, ordinary",21 to 25,,
+QQ,"Box, wooden, natural wood, with sift proof walls",21 to 25,,
+QR,"Box, plastic, expanded",21 to 25,,
+QS,"Box, plastic, solid",21 to 25,,
+RD,Rod,12.0,,
+RG,Ring,14.0,,
+RJ,"Rack, clothing hanger",93.0,,
+RK,Rack,93.0,,
+RL,Reel,91.0,,Cylindrical rotatory device with a rim at each end on which materials are wound.
+RO,Roll,13.0,,
+RT,Rednet,66.0,,Containment material made of red mesh netting for retaining articles (e.g. trees).
+RZ,"Rods, in bundle/bunch/truss",12.0,,
+SA,Sack,65.0,,
+SB,Slab,16 or 17,,
+SC,"Crate, shallow",27.0,,
+SD,Spindle,91.0,,
+SE,Sea-chest,22 or 23,,
+SH,Sachet,61.0,,
+SI,Skid,92.0,,A low movable platform or pallet to facilitate the handling and transport of goods.
+SK,"Case, skeleton",26.0,,
+SL,Slipsheet,67.0,,Hard plastic sheeting primarily used as the base on which to stack goods to optimise the space within a container. May be used as an alternative to a palletized packaging.
+SM,Sheetmetal,15.0,,
+SO,Spool,91.0,,"A packaging container used in the transport of such items as wire, cable, tape and yarn."
+SP,"Sheet, plastic wrapping",15.0,,
+SS,"Case, steel",21 to 25,,
+ST,Sheet,15.0,,
+SU,Suitcase,"21 to 23 or
+61 to 63",,
+SV,"Envelope, steel",67.0,,
+SW,Shrinkwrapped,67.0,,Goods retained in a transparent plastic film that has been wrapped around and then shrunk tightly on to the goods.
+SX,Set,11 to 45,X,
+SY,Sleeve,69.0,,
+SZ,"Sheets, in bundle/bunch/truss",15.0,,
+T1,Tablet,16.0,,"A loose or unpacked article in the form of a bar, block or piece."
+TB,Tub,51.0,,
+TC,Tea-chest,21 to 23,,
+TD,"Tube, collapsible",61 to 65,,
+TE,Tyre,93.0,,A ring made of rubber and/or metal surrounding a wheel.
+TG,"Tank container, generic",93.0,,A specially constructed container for transporting liquids and gases in bulk.
+TI,Tierce,44.0,,
+TK,"Tank, rectangular",24 or 25,,
+TL,"Tub, with lid",51.0,,
+TN,Tin,21 or 22,,
+TO,Tun,44 or 45,,
+TR,Trunk,24 or 25,,
+TS,Truss,16.0,,
+TT,"Bag, tote",62 or 63,,A capacious bag or basket.
+TU,Tube,11.0,,
+TV,"Tube, with nozzle",31 or 32,,"A tube made of plastic, metal or cardboard fitted with a nozzle, containing a liquid or semi-liquid product, e.g. silicon."
+TW,"Pallet, triwall",92.0,,A lightweight pallet made from heavy duty corrugated board.
+TY,"Tank, cylindrical",34 or 35,,
+TZ,"Tubes, in bundle/bunch/truss",11.0,,
+UC,Uncaged,0.0,,
+UN,Unit,23 to 25 or 27,,"A type of package composed of a single item or object, not otherwise specified as a unit of transport equipment."
+VA,Vat,35.0,,
+VG,"Bulk, gas (at 1031 mbar and 15°C)",6.0,,
+VI,Vial,31.0,,
+VK,Vanpack,99.0,,A type of wooden crate.
+VL,"Bulk, liquid",4.0,,
+VO,"Bulk, solid, large particles (“nodules”)",3.0,,
+VP,Vacuum-packed,67.0,,
+VQ,"Bulk, liquefied gas (at abnormal temperature/pressure)",5.0,,
+VN,Vehicle,93.0,,A self-propelled means of conveyance.
+VR,"Bulk, solid, granular particles (“grains”)",2.0,,
+VS,"Bulk, scrap metal",9.0,,Loose or unpacked scrap metal transported in bulk form.
+VY,"Bulk, solid, fine particles (“powders”)",1.0,,
+WA,Intermediate bulk container,"23 to 26 or
+62 to 64",,"A reusable container made of metal, plastic, textile, wood or composite materials used to facilitate transportation of bulk solids and liquids in manageable volumes."
+WB,Wickerbottle,42 or 43,,
+WC,"Intermediate bulk container, steel",23 to 26,,
+WD,"Intermediate bulk container, aluminium",23 to 26,,
+WF,"Intermediate bulk container, metal",23 to 26,,
+WG,"Intermediate bulk container, steel, pressurised > 10 kpa",23 to 26,,
+WH,"Intermediate bulk container, aluminium, pressurised > 10 kpa",23 to 26,,
+WJ,"Intermediate bulk container, metal, pressure 10 kpa",23 to 26,,
+WK,"Intermediate bulk container, steel, liquid",23 to 26,,
+WL,"Intermediate bulk container, aluminium, liquid",23 to 26,,
+WM,"Intermediate bulk container, metal, liquid",23 to 26,,
+WN,"Intermediate bulk container, woven plastic, without coat/liner",62 to 64,,
+WP,"Intermediate bulk container, woven plastic, coated",62 to 64,,
+WQ,"Intermediate bulk container, woven plastic, with liner",62 to 64,,
+WR,"Intermediate bulk container, woven plastic, coated and liner",62 to 64,,
+WS,"Intermediate bulk container, plastic film",62 to 64,,
+WT,"Intermediate bulk container, textile with out coat/liner",62 to 64,,
+WU,"Intermediate bulk container, natural wood, with inner liner",23 to 26,,
+WV,"Intermediate bulk container, textile, coated",62 to 64,,
+WW,"Intermediate bulk container, textile, with liner",62 to 64,,
+WX,"Intermediate bulk container, textile, coated and liner",62 to 64,,
+WY,"Intermediate bulk container, plywood, with inner liner",23 to 26,,
+WZ,"Intermediate bulk container, reconstituted wood, with inner liner",23 to 26,,
+XA,"Bag, woven plastic, without inner coat/liner",62 to 64,,
+XB,"Bag, woven plastic, sift proof",62 to 64,,
+XC,"Bag, woven plastic, water resistant",62 to 64,,
+XD,"Bag, plastics film",62 to 64,,
+XF,"Bag, textile, without inner coat/liner",62 to 64,,
+XG,"Bag, textile, sift proof",62 to 64,,
+XH,"Bag, textile, water resistant",62 to 64,,
+XJ,"Bag, paper, multi-wall",62 to 64,,
+XK,"Bag, paper, multi-wall, water resistant",62 to 64,,
+YA,"Composite packaging, plastic receptacle in steel drum",33 or 34,,
+YB,"Composite packaging, plastic receptacle in steel crate box",24 or 25,,
+YC,"Composite packaging, plastic receptacle in aluminium drum",33 or 34,,
+YD,"Composite packaging, plastic receptacle in aluminium crate",24 or 25,,
+YF,"Composite packaging, plastic receptacle in wooden box",24 or 25,,
+YG,"Composite packaging, plastic receptacle in plywood drum",33 or 34,,
+YH,"Composite packaging, plastic receptacle in plywood box",24 or 25,,
+YJ,"Composite packaging, plastic receptacle in fibre drum",33 or 34,,
+YK,"Composite packaging, plastic receptacle in fibreboard box",24 or 25,,
+YL,"Composite packaging, plastic receptacle in plastic drum",33 or 34,,
+YM,"Composite packaging, plastic receptacle in solid plastic box",24 or 25,,
+YN,"Composite packaging, glass receptacle in steel drum",33 or 34,,
+YP,"Composite packaging, glass receptacle in steel crate box",24 or 25,,
+YQ,"Composite packaging, glass receptacle in aluminium drum",33 or 34,,
+YR,"Composite packaging, glass receptacle in aluminium crate",24 or 25,,
+YS,"Composite packaging, glass receptacle in wooden box",24 or 25,,
+YT,"Composite packaging, glass receptacle in plywood drum",33 or 34,,
+YV,"Composite packaging, glass receptacle in wickerwork hamper",23.0,,
+YW,"Composite packaging, glass receptacle in fibre drum",33 or 34,,
+YX,"Composite packaging, glass receptacle in fibreboard box",24 or 25,,
+YY,"Composite packaging, glass receptacle in expandable plastic pack",62 or 63,,
+YZ,"Composite packaging, glass receptacle in solid plastic pack",23 or 24,,
+ZA,"Intermediate bulk container, paper, multi-wall",62 to 64,,
+ZB,"Bag, large",62 to 64,,
+ZC,"Intermediate bulk container, paper, multi-wall, water resistant",62 to 64,,
+ZD,"Intermediate bulk container, rigid plastic, with structural equipment, solids",23 to 26,,
+ZF,"Intermediate bulk container, rigid plastic, freestanding, solids",23 to 26,,
+ZG,"Intermediate bulk container, rigid plastic, with structural equipment, pressurised",23 to 26,,
+ZH,"Intermediate bulk container, rigid plastic, freestanding, pressurised",23 to 26,,
+ZJ,"Intermediate bulk container, rigid plastic, with structural equipment, liquids",23 to 26,,
+ZK,"Intermediate bulk container, rigid plastic, freestanding, liquids",23 to 26,,
+ZL,"Intermediate bulk container, composite, rigid plastic, solids",23 to 26,,
+ZM,"Intermediate bulk container, composite, flexible plastic, solids",62 to 64,,
+ZN,"Intermediate bulk container, composite, rigid plastic, pressurised",23 to 26,,
+ZP,"Intermediate bulk container, composite, flexible plastic, pressurised",62 to 64,,
+ZQ,"Intermediate bulk container, composite, rigid plastic, liquids",23 to 26,,
+ZR,"Intermediate bulk container, composite, flexible plastic, liquids",62 to 64,,
+ZS,"Intermediate bulk container, composite","23 to 26 or
+62 to 64",,
+ZT,"Intermediate bulk container, fibreboard",23 to 26,,
+ZU,"Intermediate bulk container, flexible",23 to 26,,
+ZV,"Intermediate bulk container, metal, other than steel",23 to 26,,
+ZW,"Intermediate bulk container, natural wood",23 to 26,,
+ZX,"Intermediate bulk container, plywood",23 to 26,,
+ZY,"Intermediate bulk container, reconstituted wood",23 to 26,,
+ZZ,Mutually defined,0.0,,

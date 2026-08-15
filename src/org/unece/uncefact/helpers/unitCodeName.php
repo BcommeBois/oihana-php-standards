@@ -27,13 +27,11 @@ use org\unece\uncefact\PackageCode;
  * measures from a unit that merely holds must ask {@see MeasureCode::getName()} directly and read its
  * `null` as the signal — this helper is the wrong tool for that job.
  *
- * ⚠️ **Two codes belong to both families**, and the measure name wins :
- *
- * - `PT` — Point ({@see MeasureCode::POINT}) over Pot ({@see PackageCode::POT})
- * - `DB` — Decibel ({@see MeasureCode::DECIBEL}) over Crate, multiple layer, wooden ({@see PackageCode::CRATE_MULTIPLE_LAYER_WOODEN})
- *
- * For those two, an article packaged in pots or in multiple layer wooden crates is named as a measure.
- * Resolve them against {@see PackageCode::getName()} when the packaging reading is the expected one.
+ * The measures are searched first, so a code claimed by both families would resolve to its
+ * measure reading. **No such code exists today** : `PT` and `DB` used to collide, but only
+ * because {@see MeasureCode} declared them wrongly — in Rec 20 `PT` is a pint and `DB` a dry
+ * pound, never a Point nor a Decibel. Correcting the codes against the official dataset
+ * removed the ambiguity rather than arbitrating it.
  *
  * @param string|null $code The UN/CEFACT unit code.
  *

@@ -1,0 +1,250 @@
+m49,alpha2,alpha3,name,region_code,region,subregion_code,subregion
+012,DZ,DZA,Algeria,002,Africa,015,Northern Africa
+818,EG,EGY,Egypt,002,Africa,015,Northern Africa
+434,LY,LBY,Libya,002,Africa,015,Northern Africa
+504,MA,MAR,Morocco,002,Africa,015,Northern Africa
+729,SD,SDN,Sudan,002,Africa,015,Northern Africa
+788,TN,TUN,Tunisia,002,Africa,015,Northern Africa
+732,EH,ESH,Western Sahara,002,Africa,015,Northern Africa
+086,IO,IOT,British Indian Ocean Territory,002,Africa,202,Sub-Saharan Africa
+108,BI,BDI,Burundi,002,Africa,202,Sub-Saharan Africa
+174,KM,COM,Comoros,002,Africa,202,Sub-Saharan Africa
+262,DJ,DJI,Djibouti,002,Africa,202,Sub-Saharan Africa
+232,ER,ERI,Eritrea,002,Africa,202,Sub-Saharan Africa
+231,ET,ETH,Ethiopia,002,Africa,202,Sub-Saharan Africa
+260,TF,ATF,French Southern Territories,002,Africa,202,Sub-Saharan Africa
+404,KE,KEN,Kenya,002,Africa,202,Sub-Saharan Africa
+450,MG,MDG,Madagascar,002,Africa,202,Sub-Saharan Africa
+454,MW,MWI,Malawi,002,Africa,202,Sub-Saharan Africa
+480,MU,MUS,Mauritius,002,Africa,202,Sub-Saharan Africa
+175,YT,MYT,Mayotte,002,Africa,202,Sub-Saharan Africa
+508,MZ,MOZ,Mozambique,002,Africa,202,Sub-Saharan Africa
+638,RE,REU,Réunion,002,Africa,202,Sub-Saharan Africa
+646,RW,RWA,Rwanda,002,Africa,202,Sub-Saharan Africa
+690,SC,SYC,Seychelles,002,Africa,202,Sub-Saharan Africa
+706,SO,SOM,Somalia,002,Africa,202,Sub-Saharan Africa
+728,SS,SSD,South Sudan,002,Africa,202,Sub-Saharan Africa
+800,UG,UGA,Uganda,002,Africa,202,Sub-Saharan Africa
+834,TZ,TZA,United Republic of Tanzania,002,Africa,202,Sub-Saharan Africa
+894,ZM,ZMB,Zambia,002,Africa,202,Sub-Saharan Africa
+716,ZW,ZWE,Zimbabwe,002,Africa,202,Sub-Saharan Africa
+024,AO,AGO,Angola,002,Africa,202,Sub-Saharan Africa
+120,CM,CMR,Cameroon,002,Africa,202,Sub-Saharan Africa
+140,CF,CAF,Central African Republic,002,Africa,202,Sub-Saharan Africa
+148,TD,TCD,Chad,002,Africa,202,Sub-Saharan Africa
+178,CG,COG,Congo,002,Africa,202,Sub-Saharan Africa
+180,CD,COD,Democratic Republic of the Congo,002,Africa,202,Sub-Saharan Africa
+226,GQ,GNQ,Equatorial Guinea,002,Africa,202,Sub-Saharan Africa
+266,GA,GAB,Gabon,002,Africa,202,Sub-Saharan Africa
+678,ST,STP,Sao Tome and Principe,002,Africa,202,Sub-Saharan Africa
+072,BW,BWA,Botswana,002,Africa,202,Sub-Saharan Africa
+748,SZ,SWZ,Eswatini,002,Africa,202,Sub-Saharan Africa
+426,LS,LSO,Lesotho,002,Africa,202,Sub-Saharan Africa
+516,NA,NAM,Namibia,002,Africa,202,Sub-Saharan Africa
+710,ZA,ZAF,South Africa,002,Africa,202,Sub-Saharan Africa
+204,BJ,BEN,Benin,002,Africa,202,Sub-Saharan Africa
+854,BF,BFA,Burkina Faso,002,Africa,202,Sub-Saharan Africa
+132,CV,CPV,Cabo Verde,002,Africa,202,Sub-Saharan Africa
+384,CI,CIV,Côte d’Ivoire,002,Africa,202,Sub-Saharan Africa
+270,GM,GMB,Gambia,002,Africa,202,Sub-Saharan Africa
+288,GH,GHA,Ghana,002,Africa,202,Sub-Saharan Africa
+324,GN,GIN,Guinea,002,Africa,202,Sub-Saharan Africa
+624,GW,GNB,Guinea-Bissau,002,Africa,202,Sub-Saharan Africa
+430,LR,LBR,Liberia,002,Africa,202,Sub-Saharan Africa
+466,ML,MLI,Mali,002,Africa,202,Sub-Saharan Africa
+478,MR,MRT,Mauritania,002,Africa,202,Sub-Saharan Africa
+562,NE,NER,Niger,002,Africa,202,Sub-Saharan Africa
+566,NG,NGA,Nigeria,002,Africa,202,Sub-Saharan Africa
+654,SH,SHN,Saint Helena,002,Africa,202,Sub-Saharan Africa
+686,SN,SEN,Senegal,002,Africa,202,Sub-Saharan Africa
+694,SL,SLE,Sierra Leone,002,Africa,202,Sub-Saharan Africa
+768,TG,TGO,Togo,002,Africa,202,Sub-Saharan Africa
+660,AI,AIA,Anguilla,019,Americas,419,Latin America and the Caribbean
+028,AG,ATG,Antigua and Barbuda,019,Americas,419,Latin America and the Caribbean
+533,AW,ABW,Aruba,019,Americas,419,Latin America and the Caribbean
+044,BS,BHS,Bahamas,019,Americas,419,Latin America and the Caribbean
+052,BB,BRB,Barbados,019,Americas,419,Latin America and the Caribbean
+535,BQ,BES,"Bonaire, Sint Eustatius and Saba",019,Americas,419,Latin America and the Caribbean
+092,VG,VGB,British Virgin Islands,019,Americas,419,Latin America and the Caribbean
+136,KY,CYM,Cayman Islands,019,Americas,419,Latin America and the Caribbean
+192,CU,CUB,Cuba,019,Americas,419,Latin America and the Caribbean
+531,CW,CUW,Curaçao,019,Americas,419,Latin America and the Caribbean
+212,DM,DMA,Dominica,019,Americas,419,Latin America and the Caribbean
+214,DO,DOM,Dominican Republic,019,Americas,419,Latin America and the Caribbean
+308,GD,GRD,Grenada,019,Americas,419,Latin America and the Caribbean
+312,GP,GLP,Guadeloupe,019,Americas,419,Latin America and the Caribbean
+332,HT,HTI,Haiti,019,Americas,419,Latin America and the Caribbean
+388,JM,JAM,Jamaica,019,Americas,419,Latin America and the Caribbean
+474,MQ,MTQ,Martinique,019,Americas,419,Latin America and the Caribbean
+500,MS,MSR,Montserrat,019,Americas,419,Latin America and the Caribbean
+630,PR,PRI,Puerto Rico,019,Americas,419,Latin America and the Caribbean
+652,BL,BLM,Saint Barthélemy,019,Americas,419,Latin America and the Caribbean
+659,KN,KNA,Saint Kitts and Nevis,019,Americas,419,Latin America and the Caribbean
+662,LC,LCA,Saint Lucia,019,Americas,419,Latin America and the Caribbean
+663,MF,MAF,Saint Martin (French Part),019,Americas,419,Latin America and the Caribbean
+670,VC,VCT,Saint Vincent and the Grenadines,019,Americas,419,Latin America and the Caribbean
+534,SX,SXM,Sint Maarten (Dutch part),019,Americas,419,Latin America and the Caribbean
+780,TT,TTO,Trinidad and Tobago,019,Americas,419,Latin America and the Caribbean
+796,TC,TCA,Turks and Caicos Islands,019,Americas,419,Latin America and the Caribbean
+850,VI,VIR,United States Virgin Islands,019,Americas,419,Latin America and the Caribbean
+084,BZ,BLZ,Belize,019,Americas,419,Latin America and the Caribbean
+188,CR,CRI,Costa Rica,019,Americas,419,Latin America and the Caribbean
+222,SV,SLV,El Salvador,019,Americas,419,Latin America and the Caribbean
+320,GT,GTM,Guatemala,019,Americas,419,Latin America and the Caribbean
+340,HN,HND,Honduras,019,Americas,419,Latin America and the Caribbean
+484,MX,MEX,Mexico,019,Americas,419,Latin America and the Caribbean
+558,NI,NIC,Nicaragua,019,Americas,419,Latin America and the Caribbean
+591,PA,PAN,Panama,019,Americas,419,Latin America and the Caribbean
+032,AR,ARG,Argentina,019,Americas,419,Latin America and the Caribbean
+068,BO,BOL,Bolivia (Plurinational State of),019,Americas,419,Latin America and the Caribbean
+074,BV,BVT,Bouvet Island,019,Americas,419,Latin America and the Caribbean
+076,BR,BRA,Brazil,019,Americas,419,Latin America and the Caribbean
+152,CL,CHL,Chile,019,Americas,419,Latin America and the Caribbean
+170,CO,COL,Colombia,019,Americas,419,Latin America and the Caribbean
+218,EC,ECU,Ecuador,019,Americas,419,Latin America and the Caribbean
+238,FK,FLK,Falkland Islands (Malvinas),019,Americas,419,Latin America and the Caribbean
+254,GF,GUF,French Guiana,019,Americas,419,Latin America and the Caribbean
+328,GY,GUY,Guyana,019,Americas,419,Latin America and the Caribbean
+600,PY,PRY,Paraguay,019,Americas,419,Latin America and the Caribbean
+604,PE,PER,Peru,019,Americas,419,Latin America and the Caribbean
+239,GS,SGS,South Georgia and the South Sandwich Islands,019,Americas,419,Latin America and the Caribbean
+740,SR,SUR,Suriname,019,Americas,419,Latin America and the Caribbean
+858,UY,URY,Uruguay,019,Americas,419,Latin America and the Caribbean
+862,VE,VEN,Venezuela (Bolivarian Republic of),019,Americas,419,Latin America and the Caribbean
+060,BM,BMU,Bermuda,019,Americas,021,Northern America
+124,CA,CAN,Canada,019,Americas,021,Northern America
+304,GL,GRL,Greenland,019,Americas,021,Northern America
+666,PM,SPM,Saint Pierre and Miquelon,019,Americas,021,Northern America
+840,US,USA,United States of America,019,Americas,021,Northern America
+010,AQ,ATA,Antarctica,,,,
+398,KZ,KAZ,Kazakhstan,142,Asia,143,Central Asia
+417,KG,KGZ,Kyrgyzstan,142,Asia,143,Central Asia
+762,TJ,TJK,Tajikistan,142,Asia,143,Central Asia
+795,TM,TKM,Turkmenistan,142,Asia,143,Central Asia
+860,UZ,UZB,Uzbekistan,142,Asia,143,Central Asia
+156,CN,CHN,China,142,Asia,030,Eastern Asia
+344,HK,HKG,"China, Hong Kong Special Administrative Region",142,Asia,030,Eastern Asia
+446,MO,MAC,"China, Macao Special Administrative Region",142,Asia,030,Eastern Asia
+408,KP,PRK,Democratic People's Republic of Korea,142,Asia,030,Eastern Asia
+392,JP,JPN,Japan,142,Asia,030,Eastern Asia
+496,MN,MNG,Mongolia,142,Asia,030,Eastern Asia
+410,KR,KOR,Republic of Korea,142,Asia,030,Eastern Asia
+096,BN,BRN,Brunei Darussalam,142,Asia,035,South-eastern Asia
+116,KH,KHM,Cambodia,142,Asia,035,South-eastern Asia
+360,ID,IDN,Indonesia,142,Asia,035,South-eastern Asia
+418,LA,LAO,Lao People's Democratic Republic,142,Asia,035,South-eastern Asia
+458,MY,MYS,Malaysia,142,Asia,035,South-eastern Asia
+104,MM,MMR,Myanmar,142,Asia,035,South-eastern Asia
+608,PH,PHL,Philippines,142,Asia,035,South-eastern Asia
+702,SG,SGP,Singapore,142,Asia,035,South-eastern Asia
+764,TH,THA,Thailand,142,Asia,035,South-eastern Asia
+626,TL,TLS,Timor-Leste,142,Asia,035,South-eastern Asia
+704,VN,VNM,Viet Nam,142,Asia,035,South-eastern Asia
+004,AF,AFG,Afghanistan,142,Asia,034,Southern Asia
+050,BD,BGD,Bangladesh,142,Asia,034,Southern Asia
+064,BT,BTN,Bhutan,142,Asia,034,Southern Asia
+356,IN,IND,India,142,Asia,034,Southern Asia
+364,IR,IRN,Iran (Islamic Republic of),142,Asia,034,Southern Asia
+462,MV,MDV,Maldives,142,Asia,034,Southern Asia
+524,NP,NPL,Nepal,142,Asia,034,Southern Asia
+586,PK,PAK,Pakistan,142,Asia,034,Southern Asia
+144,LK,LKA,Sri Lanka,142,Asia,034,Southern Asia
+051,AM,ARM,Armenia,142,Asia,145,Western Asia
+031,AZ,AZE,Azerbaijan,142,Asia,145,Western Asia
+048,BH,BHR,Bahrain,142,Asia,145,Western Asia
+196,CY,CYP,Cyprus,142,Asia,145,Western Asia
+268,GE,GEO,Georgia,142,Asia,145,Western Asia
+368,IQ,IRQ,Iraq,142,Asia,145,Western Asia
+376,IL,ISR,Israel,142,Asia,145,Western Asia
+400,JO,JOR,Jordan,142,Asia,145,Western Asia
+414,KW,KWT,Kuwait,142,Asia,145,Western Asia
+422,LB,LBN,Lebanon,142,Asia,145,Western Asia
+512,OM,OMN,Oman,142,Asia,145,Western Asia
+634,QA,QAT,Qatar,142,Asia,145,Western Asia
+682,SA,SAU,Saudi Arabia,142,Asia,145,Western Asia
+275,PS,PSE,State of Palestine,142,Asia,145,Western Asia
+760,SY,SYR,Syrian Arab Republic,142,Asia,145,Western Asia
+792,TR,TUR,Türkiye,142,Asia,145,Western Asia
+784,AE,ARE,United Arab Emirates,142,Asia,145,Western Asia
+887,YE,YEM,Yemen,142,Asia,145,Western Asia
+112,BY,BLR,Belarus,150,Europe,151,Eastern Europe
+100,BG,BGR,Bulgaria,150,Europe,151,Eastern Europe
+203,CZ,CZE,Czechia,150,Europe,151,Eastern Europe
+348,HU,HUN,Hungary,150,Europe,151,Eastern Europe
+616,PL,POL,Poland,150,Europe,151,Eastern Europe
+498,MD,MDA,Republic of Moldova,150,Europe,151,Eastern Europe
+642,RO,ROU,Romania,150,Europe,151,Eastern Europe
+643,RU,RUS,Russian Federation,150,Europe,151,Eastern Europe
+703,SK,SVK,Slovakia,150,Europe,151,Eastern Europe
+804,UA,UKR,Ukraine,150,Europe,151,Eastern Europe
+248,AX,ALA,Åland Islands,150,Europe,154,Northern Europe
+831,GG,GGY,Guernsey,150,Europe,154,Northern Europe
+832,JE,JEY,Jersey,150,Europe,154,Northern Europe
+680,,,Sark,150,Europe,154,Northern Europe
+208,DK,DNK,Denmark,150,Europe,154,Northern Europe
+233,EE,EST,Estonia,150,Europe,154,Northern Europe
+234,FO,FRO,Faroe Islands,150,Europe,154,Northern Europe
+246,FI,FIN,Finland,150,Europe,154,Northern Europe
+352,IS,ISL,Iceland,150,Europe,154,Northern Europe
+372,IE,IRL,Ireland,150,Europe,154,Northern Europe
+833,IM,IMN,Isle of Man,150,Europe,154,Northern Europe
+428,LV,LVA,Latvia,150,Europe,154,Northern Europe
+440,LT,LTU,Lithuania,150,Europe,154,Northern Europe
+578,NO,NOR,Norway,150,Europe,154,Northern Europe
+744,SJ,SJM,Svalbard and Jan Mayen Islands,150,Europe,154,Northern Europe
+752,SE,SWE,Sweden,150,Europe,154,Northern Europe
+826,GB,GBR,United Kingdom of Great Britain and Northern Ireland,150,Europe,154,Northern Europe
+008,AL,ALB,Albania,150,Europe,039,Southern Europe
+020,AD,AND,Andorra,150,Europe,039,Southern Europe
+070,BA,BIH,Bosnia and Herzegovina,150,Europe,039,Southern Europe
+191,HR,HRV,Croatia,150,Europe,039,Southern Europe
+292,GI,GIB,Gibraltar,150,Europe,039,Southern Europe
+300,GR,GRC,Greece,150,Europe,039,Southern Europe
+336,VA,VAT,Holy See,150,Europe,039,Southern Europe
+380,IT,ITA,Italy,150,Europe,039,Southern Europe
+470,MT,MLT,Malta,150,Europe,039,Southern Europe
+499,ME,MNE,Montenegro,150,Europe,039,Southern Europe
+807,MK,MKD,North Macedonia,150,Europe,039,Southern Europe
+620,PT,PRT,Portugal,150,Europe,039,Southern Europe
+674,SM,SMR,San Marino,150,Europe,039,Southern Europe
+688,RS,SRB,Serbia,150,Europe,039,Southern Europe
+705,SI,SVN,Slovenia,150,Europe,039,Southern Europe
+724,ES,ESP,Spain,150,Europe,039,Southern Europe
+040,AT,AUT,Austria,150,Europe,155,Western Europe
+056,BE,BEL,Belgium,150,Europe,155,Western Europe
+250,FR,FRA,France,150,Europe,155,Western Europe
+276,DE,DEU,Germany,150,Europe,155,Western Europe
+438,LI,LIE,Liechtenstein,150,Europe,155,Western Europe
+442,LU,LUX,Luxembourg,150,Europe,155,Western Europe
+492,MC,MCO,Monaco,150,Europe,155,Western Europe
+528,NL,NLD,Netherlands,150,Europe,155,Western Europe
+756,CH,CHE,Switzerland,150,Europe,155,Western Europe
+036,AU,AUS,Australia,009,Oceania,053,Australia and New Zealand
+162,CX,CXR,Christmas Island,009,Oceania,053,Australia and New Zealand
+166,CC,CCK,Cocos (Keeling) Islands,009,Oceania,053,Australia and New Zealand
+334,HM,HMD,Heard Island and McDonald Islands,009,Oceania,053,Australia and New Zealand
+554,NZ,NZL,New Zealand,009,Oceania,053,Australia and New Zealand
+574,NF,NFK,Norfolk Island,009,Oceania,053,Australia and New Zealand
+242,FJ,FJI,Fiji,009,Oceania,054,Melanesia
+540,NC,NCL,New Caledonia,009,Oceania,054,Melanesia
+598,PG,PNG,Papua New Guinea,009,Oceania,054,Melanesia
+090,SB,SLB,Solomon Islands,009,Oceania,054,Melanesia
+548,VU,VUT,Vanuatu,009,Oceania,054,Melanesia
+316,GU,GUM,Guam,009,Oceania,057,Micronesia
+296,KI,KIR,Kiribati,009,Oceania,057,Micronesia
+584,MH,MHL,Marshall Islands,009,Oceania,057,Micronesia
+583,FM,FSM,Micronesia (Federated States of),009,Oceania,057,Micronesia
+520,NR,NRU,Nauru,009,Oceania,057,Micronesia
+580,MP,MNP,Northern Mariana Islands,009,Oceania,057,Micronesia
+585,PW,PLW,Palau,009,Oceania,057,Micronesia
+581,UM,UMI,United States Minor Outlying Islands,009,Oceania,057,Micronesia
+016,AS,ASM,American Samoa,009,Oceania,061,Polynesia
+184,CK,COK,Cook Islands,009,Oceania,061,Polynesia
+258,PF,PYF,French Polynesia,009,Oceania,061,Polynesia
+570,NU,NIU,Niue,009,Oceania,061,Polynesia
+612,PN,PCN,Pitcairn,009,Oceania,061,Polynesia
+882,WS,WSM,Samoa,009,Oceania,061,Polynesia
+772,TK,TKL,Tokelau,009,Oceania,061,Polynesia
+776,TO,TON,Tonga,009,Oceania,061,Polynesia
+798,TV,TUV,Tuvalu,009,Oceania,061,Polynesia
+876,WF,WLF,Wallis and Futuna Islands,009,Oceania,061,Polynesia

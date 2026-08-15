@@ -72,18 +72,33 @@ final class UnitCodeNameTest extends TestCase
     }
 
     /* --------------------------------------------------------------------
-       Codes claimed by both families — the measure family wins
+       No code may be claimed by both families
        ------------------------------------------------------------------ */
 
-    public function testMeasureFamilyTakesPrecedenceOnSharedCodes(): void
+    /**
+     * The helper resolves a code against the measures first and the packages second,
+     * so a code claimed by both would silently return the measure reading. No such
+     * code exists today — `PT` and `DB` used to collide, but only because MeasureCode
+     * declared them wrongly: `PT` is a pint and `DB` a dry pound in Rec 20, never a
+     * Point nor a Decibel. Correcting the codes against the official dataset removed
+     * the ambiguity rather than arbitrating it.
+     *
+     * This test keeps it removed.
+     */
+    public function testNoCodeIsClaimedByBothFamilies(): void
     {
-        // 'PT' is a Point (measure) and a Pot (package)
-        $this->assertSame(MeasureCode::getName('PT') , unitCodeName('PT')) ;
-        $this->assertSame('Point' , unitCodeName('PT')) ;
+        $shared = array_values(array_unique(array_intersect(
+            MeasureCode::getConstantValues() ,
+            PackageCode::getConstantValues()
+        ))) ;
 
-        // 'DB' is a Decibel (measure) and a multiple layer wooden Crate (package)
-        $this->assertSame(MeasureCode::getName('DB') , unitCodeName('DB')) ;
-        $this->assertSame('Decibel' , unitCodeName('DB')) ;
+        $this->assertSame([] , $shared , 'Codes claimed by both the measure and the package family') ;
+    }
+
+    public function testPackageCodesFormerlyShadowedResolveToTheirPackage(): void
+    {
+        $this->assertSame('Pot' , unitCodeName('PT')) ;
+        $this->assertSame('Crate, multiple layer, wooden' , unitCodeName('DB')) ;
     }
 
     /* --------------------------------------------------------------------

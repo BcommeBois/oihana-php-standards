@@ -1,0 +1,101 @@
+constant,code,section,name_override,symbol_override,status
+ACRE,ACR,Area Units,Acre,ac,ok
+ACRE_FOOT,M67,Area Units,Acre-Foot,ac-ft,corrige
+AMPERE,AMP,Common Miscellaneous Units,Ampere,,ok
+ANGULAR,DD,Degrees Units,Angular Degree,,ok
+BAR,BAR,Pressure Units,Bar,,ok
+BARREL,BLL,Volume Units,Barrel,bbl,ok
+BECQUEREL,BQL,Common Miscellaneous Units,Becquerel,,ok
+BIT,A99,Common Miscellaneous Units,Bit,,corrige
+BYTE,AD,Common Miscellaneous Units,Byte,B,corrige
+CALORIE,R4,Energy Units,Calorie,,corrige
+CARAT,CTM,Mass Units (Weight),Carat,ct,ok
+CELSIUS,CEL,Temperature Units,Degree Celsius,,ok
+CENTILITRE,CLT,Volume Units,Centilitre,cL,ok
+CENTIMETER,CMT,Length Units,Centimeter,,ok
+COULOMB,COU,Common Miscellaneous Units,Coulomb,,corrige
+CUBIC_CENTIMETER,CMQ,Volume Units,Cubic Centimeter,,ok
+CUBIC_DECIMETER,DMQ,Volume Units,Cubic Decimeter,,ok
+CUBIC_FOOT,FTQ,Volume Units,Cubic Foot,,ok
+CUBIC_METER,MTQ,Volume Units,Cubic Meter,,ok
+DAY,DAY,Time Units,Day,day,ok
+DECIBEL,2N,Common Miscellaneous Units,Decibel,,corrige
+DOZEN,DZN,Quantity Units (Unités de quantité),Dozen,dz,ok
+FAHRENHEIT,FAH,Temperature Units,Degree Fahrenheit,,ok
+FARAD,FAR,Common Miscellaneous Units,Farad,,ok
+FOOT,FOT,Length Units,Foot,,ok
+GIGABYTE,E34,Common Miscellaneous Units,Gigabyte,GB,corrige
+GRAM,GRM,Mass Units (Weight),Gram,,ok
+GRAY,A95,Common Miscellaneous Units,Gray,,corrige
+GROSS,GRO,Quantity Units (Unités de quantité),Gross,,ok
+HECTARE,HAR,Area Units,Hectare,,ok
+HECTOMETER,HMT,Length Units,Hectometer,,ok
+HENRY,81,Common Miscellaneous Units,Henry,,corrige
+HERTZ,HTZ,Common Miscellaneous Units,Hertz,,ok
+HOUR,HUR,Time Units,Hour,,ok
+HUNDRED,CEN,Quantity Units (Unités de quantité),Hundred,100,ok
+IMPERIAL_GALLON,GLI,Volume Units,Imperial Gallon,gal (Imp),ok
+INCH,INH,Length Units,Inch,,ok
+JOULE,JOU,Energy Units,Joule,,ok
+KELVIN,KEL,Temperature Units,Kelvin,,ok
+KILOBYTE,2P,Common Miscellaneous Units,Kilobyte,KB,corrige
+KILOCALORIE,E14,Energy Units,Kilocalorie,kcal,corrige
+KILOGRAM,KGM,Mass Units (Weight),Kilogram,,ok
+KILOGRAM_PER_CUBIC_METER,KMQ,Density Units,Kilogram per cubic metre,,ok
+KILOHERTZ,KHZ,Common Miscellaneous Units,Kilohertz,,ok
+KILOJOULE,KJO,Energy Units,Kilojoule,,ok
+KILOMETER,KMT,Length Units,Kilometer,,ok
+KILOWATT,KWT,Common Miscellaneous Units,Kilowatt,,ok
+KILOWATT_HOUR,KWH,Energy Units,Kilowatt-Hour,kWh,ok
+LITER,LTR,Volume Units,Liter,L,ok
+LUMEN,LUM,Common Miscellaneous Units,Lumen,,ok
+LUX,LUX,Common Miscellaneous Units,Lux,,ok
+MEGABYTE,4L,Common Miscellaneous Units,Megabyte,MB,corrige
+MEGAHERTZ,MHZ,Common Miscellaneous Units,Megahertz,,ok
+METER,MTR,Length Units,Meter,,ok
+METRIC_TON,TNE,Mass Units (Weight),Metric Ton,,ok
+MILE,SMI,Length Units,Mile,mi,ok
+MILLIBAR,MBR,Pressure Units,Millibar,,ok
+MILLIGRAM,MGM,Mass Units (Weight),Milligram,,ok
+MILLILITER,MLT,Volume Units,Milliliter,mL,ok
+MILLIMETER,MMT,Length Units,Millimeter,,ok
+MINUTE,MIN,Time Units,Minute,,ok
+MONTH,MON,Time Units,Month,month,ok
+NEWTON,NEW,Common Miscellaneous Units,Newton,,ok
+OHM,OHM,Common Miscellaneous Units,Ohm,Ω,ok
+OUNCE,ONZ,Mass Units (Weight),Ounce,,corrige
+PAIR,PR,Quantity Units (Unités de quantité),Pair,pr,ok
+PARTS_PER_MILLION,59,Percentage and Ratio Units,Parts Per Million,,corrige
+PASCAL,PAL,Pressure Units,Pascal,,ok
+PERCENT,P1,Percentage and Ratio Units,Percent,%,corrige
+PER_THOUSAND,NX,Percentage and Ratio Units,Per Thousand,,corrige
+PIECE,H87,Quantity Units (Unités de quantité),Piece,pc,corrige
+POUND,LBR,Mass Units (Weight),Pound,,ok
+POUND_FORCE,C78,Common Miscellaneous Units,Pound-force,,corrige
+POUND_PER_SQUARE_INCH,PS,Pressure Units,Pound per Square Inch,psi,corrige
+RADIAN,C81,Degrees Units,Radian,,corrige
+REVOLUTION_PER_MINUTE,RPM,Common Miscellaneous Units,Revolution per Minute,rpm,ok
+SCORE,SCO,Generic / Dimensionless Units & Factors,Score,score,ok
+SECOND,SEC,Time Units,Second,,ok
+SIEMENS,SIE,Common Miscellaneous Units,Siemens,,ok
+SIEVERT,D13,Common Miscellaneous Units,Sievert,,corrige
+SQUARE_CENTIMETER,CMK,Area Units,Square Centimeter,,ok
+SQUARE_DECIMETER,DMK,Area Units,Square Decimeter,,ok
+SQUARE_FOOT,FTK,Area Units,Square Foot,,ok
+SQUARE_INCH,INK,Area Units,Square Inch,,ok
+SQUARE_KILOMETER,KMK,Area Units,Square Kilometer,,ok
+SQUARE_METER,MTK,Area Units,Square Meter,,ok
+SQUARE_MILE,MIK,Area Units,Square Mile,,corrige
+SQUARE_MILLIMETER,MMK,Area Units,Square Millimeter,,ok
+SQUARE_YARD,YDK,Area Units,Square Yard,,corrige
+TEN_PAIRS,TPR,Quantity Units (Unités de quantité),Ten Pairs,10pr,corrige
+TESLA,D33,Common Miscellaneous Units,Tesla,,corrige
+THOUSAND,MIL,Quantity Units (Unités de quantité),Thousand,1000,corrige
+UNIT,C62,Quantity Units (Unités de quantité),Unit,un,ok
+US_GALLON,GLL,Volume Units,US Gallon,gal (US),corrige
+VOLT,VLT,Common Miscellaneous Units,Volt,,ok
+WATT,WTT,Common Miscellaneous Units,Watt,,ok
+WEBER,WEB,Common Miscellaneous Units,Weber,,ok
+WEEK,WEE,Time Units,Week,,ok
+YARD,YRD,Length Units,Yard,,ok
+YEAR,ANN,Time Units,Year,yr,ok

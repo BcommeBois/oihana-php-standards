@@ -46,7 +46,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 #### UN/CEFACT units of measure (`org\unece\uncefact`)
 - Density units: `MeasureCode::KILOGRAM_PER_CUBIC_METER` (`KMQ`), `MeasureName::KILOGRAM_PER_CUBIC_METER` (`Kilogram per cubic metre`) and `MeasureSymbol::KILOGRAM_PER_CUBIC_METER` (`kg/m³`)
-- `org\unece\uncefact\helpers\unitCodeName` — resolves the official name of a unit code against both families, measures (Rec. 20) first and packages (Rec. 21) as a fallback; returns `null` for a `null`, unknown or wrongly-cased code. The two families are flattened into a single name: callers that must tell a unit that measures from a unit that merely holds should ask `MeasureCode::getName()` directly. `PT` (Point / Pot) and `DB` (Decibel / Crate, multiple layer, wooden) belong to both families and resolve to the measure name.
+- `org\unece\uncefact\helpers\unitCodeName` — resolves the official name of a unit code against both families, measures (Rec. 20) first and packages (Rec. 21) as a fallback; returns `null` for a `null`, unknown or wrongly-cased code. The two families are flattened into a single name: callers that must tell a unit that measures from a unit that merely holds should ask `MeasureCode::getName()` directly. No code is claimed by both families.
+
+#### Reference datasets and generator
+- `tools/generate-uncefact-rec20.php` — generates `MeasureCode`, `MeasureName` and `MeasureSymbol` from the official Rec 20 dataset. Supports `--dry-run`. Refuses to write when a selected code is absent from the dataset, is used twice, or when two constants would share a name or a symbol — the invariant a duplicated value would break in `ConstantsTrait::getConstant()`.
+- `tools/data/uncefact-rec20.csv` — the 2136 official unit codes, extracted from `rec20_Rev17e-2021.xlsx` (Annex II & III).
+- `tools/data/uncefact-rec20-selection.csv` — the curated subset the library exposes, one row per constant. The only file to edit by hand: adding a unit means adding a row, its name and symbol are then read from the official dataset. `name_override` / `symbol_override` keep a display string that deliberately differs from the official one (American spelling, title case), which makes every deviation explicit instead of silent.
+- `tools/data/uncefact-rec21.csv` — the 406 official package type codes (Rec 21 Rev 12).
+- `tools/data/unsd-m49.csv` — the 249 UNSD M49 countries and areas with their ISO alpha-2 and alpha-3 codes.
+- `tools/data/iso4217.csv` — the 178 ISO 4217 currency codes, list one published 2026-01-01.
 
 #### Tooling
 - `tools/generate-unm49-numeric.php` — maintenance script to regenerate `UNM49Numeric` from a curated dataset (outside composer autoload)
@@ -60,10 +68,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - A GitHub Actions workflow (`.github/workflows/docs.yml`) that builds the documentation and deploys it to GitHub Pages on every push to `main`.
 
 ### Changed
+- `MeasureCode`, `MeasureName` and `MeasureSymbol` are now **generated** from the official UN/CEFACT Rec 20 Rev 17 dataset — do not edit them by hand. An audit against that dataset found 58 of the 105 hand-typed constants non-conforming, which is what this change fixes and prevents. `MeasureName` and `MeasureSymbol` values are unchanged to the character: the generator keeps the existing display strings through explicit overrides, so no `unitText` moves downstream.
+- **27 `MeasureCode` values corrected.** Two change the meaning of the constant, not merely its code:
+  - `PERCENT` — `'PC1'` → `'P1'`. `PC1` is not a Rec 20 code.
+  - `OUNCE` — `'OZA'` → `'ONZ'`. `OZA` is a *fluid ounce*, a unit of volume, while the constant is declared among the masses. `ONZ` is the avoirdupois ounce.
+
+  The 25 others replace a code that either did not exist or denoted an unrelated unit — `DB` was a *dry pound*, not a decibel; `GB` a *gallon (US) per day*, not a gigabyte; `PCE` and `RAD` were not Rec 20 codes at all: `ACRE_FOOT` `AFK`→`M67`, `BIT` `BIT`→`A99`, `BYTE` `BTE`→`AD`, `CALORIE` `CAL`→`R4`, `COULOMB` `CLB`→`COU`, `DECIBEL` `DB`→`2N`, `GIGABYTE` `GB`→`E34`, `GRAY` `GRY`→`A95`, `HENRY` `HNH`→`81`, `KILOBYTE` `KB`→`2P`, `KILOCALORIE` `KCC`→`E14`, `MEGABYTE` `MB`→`4L`, `PARTS_PER_MILLION` `PPM`→`59`, `PER_THOUSAND` `PER`→`NX`, `PIECE` `PCE`→`H87`, `POUND_FORCE` `LBF`→`C78`, `POUND_PER_SQUARE_INCH` `PSI`→`PS`, `RADIAN` `RAD`→`C81`, `SIEVERT` `SVT`→`D13`, `SQUARE_MILE` `SMK`→`MIK`, `SQUARE_YARD` `YKM`→`YDK`, `TEN_PAIRS` `DPA`→`TPR`, `TESLA` `TSL`→`D33`, `THOUSAND` `THM`→`MIL`, `US_GALLON` `GLD`→`GLL`.
+- **5 constants removed** (105 → 100). `NUMBER`, `RATIO` and `COUNT` describe a factor or a way of counting, not a unit of measure, and Rec 20 has no equivalent — the dimensionless quantity is `C62` (*one*) and the proportion is `P1` (*percent*). `POINT` and `UNIT_OF_CAPITAL` denoted a *pint (US)* and a *telecommunication port* respectively; no Rec 20 code matches what they were meant to express.
 - `MeasureName::getSymbol()` parameter renamed from `$code` to `$name`, and `MeasureSymbol::getName()` parameter renamed from `$code` to `$symbol`; both were misnamed and neither ever received a code. **Breaking for named arguments only**: use `MeasureName::getSymbol(name: …)` and `MeasureSymbol::getName(symbol: …)`. Positional calls are unaffected.
 - Moved the hand-written bilingual (en/fr) documentation from `docs/` to `wiki/`; the `docs/` directory is now reserved for the generated phpDocumentor site and is no longer versioned.
 
 ### Fixed
+- `unitCodeName()` no longer has to arbitrate between the two families: correcting the codes against the official dataset removed the only two collisions instead of resolving them. `PT` and `DB` collided solely because `MeasureCode` declared them wrongly — in Rec 20 they are a pint and a dry pound, never a Point nor a Decibel. `MeasureCode` and `PackageCode` now share no value, which a test pins.
 - Documentation of `MeasureCode`, `MeasureName` and `MeasureSymbol`: the class examples referenced five classes that do not exist (`UnitCodes`, `UnitNames`, `UnitSymbols`, `MeasureNames`, `MeasureSymbols`) and documented `get()` as returning a `{"name":…,"unitCode":…,"unitText":…}` object, when it is inherited from `ConstantsTrait` and returns the raw value. `MeasureSymbol::getCode()` gave `'P1'` as a sample code, which is not declared anywhere. Examples are now runnable as written, and each class states that the three mirror each other and declare the same constant names — the invariant every cross lookup depends on.
 - `MeasureName::ANGULAR_DEGREE` renamed to `MeasureName::ANGULAR` to match `MeasureCode::ANGULAR` and `MeasureSymbol::ANGULAR`. The cross-class lookups resolve a value to its constant name, so the mismatch made `MeasureCode::getName('DD')`, `MeasureSymbol::getName('°')` and `MeasureName::getCode('Angular Degree')` return `null`. **Breaking**: use `MeasureName::ANGULAR` instead of `MeasureName::ANGULAR_DEGREE` (the value `'Angular Degree'` is unchanged).
 - `PackageCode::ROLL` value
