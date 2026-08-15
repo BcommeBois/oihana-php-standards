@@ -8,6 +8,16 @@ use org\iso\ISO639_1;
 use org\unstats\UNM49Numeric;
 
 /**
+ * Two-letter language subtags the IANA registry declares but ISO 639-1 does not list.
+ *
+ * `bh` is a collection (Bihari languages) and `sh` a macrolanguage (Serbo-Croatian).
+ * Neither is deprecated, so both are valid BCP 47 language subtags.
+ *
+ * The five deprecated forms — `in`, `iw`, `ji`, `jw`, `mo` — are deliberately absent.
+ */
+const BCP47_ONLY_LANGUAGES = [ 'bh' , 'sh' ] ;
+
+/**
  * Validates whether a string is a valid IETF BCP 47 / RFC 5646 locale tag.
  *
  * Recognized minimal grammar:
@@ -32,6 +42,13 @@ use org\unstats\UNM49Numeric;
  *
  * 3-letter languages are not cross-validated (ISO 639-2/3 classes are not
  * available yet — see the future `org\iso\ISO639_2` and `org\iso\ISO639_5`).
+ *
+ * BCP 47 takes its authority from the IANA Language Subtag Registry, which is a
+ * superset of ISO 639-1 : it keeps collections and macrolanguages that ISO 639-1
+ * does not list. Two of them, `bh` and `sh`, are valid and not deprecated, so
+ * validating against {@see ISO639_1} alone would reject them. They are accepted
+ * through {@see BCP47_ONLY_LANGUAGES}. The five deprecated forms — `in`, `iw`,
+ * `ji`, `jw`, `mo` — stay rejected, which is what their deprecation calls for.
  *
  * @param string $tag    The locale tag to validate
  * @param bool   $strict If true, cross-validate against ISO classes (default: false)
@@ -70,7 +87,9 @@ function isLocale( string $tag , bool $strict = false ): bool
     }
 
     // Language: 2 letters → ISO 639-1 ; 3 letters → not validated
-    if ( strlen( $parsed[ 'language' ] ) === 2 && !ISO639_1::includes( $parsed[ 'language' ] ) )
+    if ( strlen( $parsed[ 'language' ] ) === 2
+      && !ISO639_1::includes( $parsed[ 'language' ] )
+      && !in_array( $parsed[ 'language' ] , BCP47_ONLY_LANGUAGES , true ) )
     {
         return false ;
     }

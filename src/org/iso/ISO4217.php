@@ -46,7 +46,7 @@ class ISO4217
     public const string AMD = 'AMD';
 
     /**
-     * Netherlands Antillean Guilder
+     * Netherlands Antillean Guilder (withdrawn — replaced by {@see self::XCG})
      */
     public const string ANG = 'ANG';
 
@@ -91,7 +91,7 @@ class ISO4217
     public const string BDT = 'BDT';
 
     /**
-     * Bulgarian Lev
+     * Bulgarian Lev (withdrawn — Bulgaria adopted the euro on 1 January 2026)
      */
     public const string BGN = 'BGN';
 
@@ -301,7 +301,7 @@ class ISO4217
     public const string HNL = 'HNL';
 
     /**
-     * Croatian Kuna
+     * Croatian Kuna (withdrawn — Croatia adopted the euro in 2023)
      */
     public const string HRK = 'HRK';
 
@@ -638,6 +638,11 @@ class ISO4217
     /**
      * Sierra Leonean Leone
      */
+    public const string SLE = 'SLE';
+
+    /**
+     * Sierra Leonean Leone (withdrawn — redenominated as {@see self::SLE})
+     */
     public const string SLL = 'SLL';
 
     /**
@@ -746,7 +751,12 @@ class ISO4217
     public const string UZS = 'UZS';
 
     /**
-     * Venezuelan Bolívar
+     * Venezuelan Bolívar Digital
+     */
+    public const string VED = 'VED';
+
+    /**
+     * Venezuelan Bolívar Soberano
      */
     public const string VES = 'VES';
 
@@ -784,6 +794,11 @@ class ISO4217
      * East Caribbean Dollar
      */
     public const string XCD = 'XCD';
+
+    /**
+     * Caribbean Guilder — replaces {@see self::ANG}
+     */
+    public const string XCG = 'XCG';
 
     /**
      * Special Drawing Rights
@@ -826,7 +841,12 @@ class ISO4217
     public const string ZMW = 'ZMW';
 
     /**
-     * Zimbabwean Dollar
+     * Zimbabwe Gold — replaces {@see self::ZWL}
+     */
+    public const string ZWG = 'ZWG';
+
+    /**
+     * Zimbabwean Dollar (withdrawn — replaced by {@see self::ZWG})
      */
     public const string ZWL = 'ZWL';
 }

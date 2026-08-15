@@ -104,4 +104,44 @@ final class IsLocaleTest extends TestCase
         $this->assertTrue(isLocale('es-999'));                 // tolerant: syntax OK
         $this->assertFalse(isLocale('es-999', strict: true));  // strict: unknown M49 code
     }
+
+    /* --------------------------------------------------------------------
+       IANA subtags that ISO 639-1 does not list
+       ------------------------------------------------------------------ */
+
+    /**
+     * BCP 47 takes its authority from the IANA registry, a superset of ISO 639-1.
+     * `bh` is a collection and `sh` a macrolanguage : both are valid subtags, so
+     * validating against ISO 639-1 alone used to reject them.
+     */
+    public function testStrictAcceptsIanaOnlyLanguages(): void
+    {
+        $this->assertTrue(isLocale('bh', strict: true));        // Bihari languages, Scope: collection
+        $this->assertTrue(isLocale('sh', strict: true));        // Serbo-Croatian, Scope: macrolanguage
+        $this->assertTrue(isLocale('sh-Latn', strict: true));
+        $this->assertTrue(isLocale('bh-IN', strict: true));
+    }
+
+    /**
+     * The exception is narrow : it widens the language subtag, nothing else.
+     */
+    public function testStrictStillValidatesTheRestOfAnIanaOnlyTag(): void
+    {
+        $this->assertFalse(isLocale('sh-ZZ', strict: true));    // ZZ is not an ISO 3166-1 region
+        $this->assertFalse(isLocale('bh-Wxyz', strict: true));  // Wxyz is not an ISO 15924 script
+        $this->assertFalse(isLocale('sh-999', strict: true));   // 999 is not assigned in UN M49
+    }
+
+    /**
+     * The five deprecated two-letter subtags stay rejected : IANA keeps them so that
+     * legacy tags can still be parsed, not so that new ones can be written.
+     */
+    public function testStrictRejectsDeprecatedLanguages(): void
+    {
+        foreach ([ 'in' , 'iw' , 'ji' , 'jw' , 'mo' ] as $deprecated)
+        {
+            $this->assertTrue(isLocale($deprecated) , "$deprecated is syntactically valid");
+            $this->assertFalse(isLocale($deprecated , strict: true) , "$deprecated is deprecated");
+        }
+    }
 }

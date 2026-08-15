@@ -7,11 +7,15 @@ use oihana\reflect\traits\ConstantsTrait;
 /**
  * Class UNM49
  *
- * Provides a set of constants representing country codes as defined by the UN M49 standard.
+ * Provides the alpha-3 country codes listed alongside the UN M49 standard.
  *
- * UN M49 is a standard developed by the United Nations Statistics Division that assigns numeric
- * and alpha-3 codes to countries and areas for statistical purposes. This class provides the
- * alpha-3 codes for countries and territories as defined in the M49 standard.
+ * ⚠️ **These codes are ISO 3166-1 alpha-3, not M49 codes.** UN M49 assigns *numeric* codes only —
+ * `250` for France — and the UNSD publishes the ISO alpha-3 column next to its own. This class
+ * carries that column, which makes it the alpha-3 counterpart of {@see \org\iso\ISO3166_1} rather
+ * than a registry of its own. The actual M49 registry of this library is
+ * {@see \org\unstats\UNM49Numeric}.
+ *
+ * The 248 entries match the UNSD table (versioned at `tools/data/unsd-m49.csv`) exactly.
  *
  * These codes are commonly used in international data exchange, trade, statistics, and software systems.
  *
@@ -19,6 +23,8 @@ use oihana\reflect\traits\ConstantsTrait;
  *   $country = UNM49::FRA; // 'FRA' for France
  *
  * @see https://unstats.un.org/unsd/methodology/m49/ United Nations M49 standard
+ * @see \org\unstats\UNM49Numeric The numeric M49 codes this standard actually defines.
+ * @see \org\iso\ISO3166_1 The alpha-2 counterpart.
  */
 class UNM49
 {

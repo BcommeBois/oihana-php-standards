@@ -59,7 +59,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - `tools/data/unsd-m49.csv` — the 249 UNSD M49 countries and areas with their ISO alpha-2 and alpha-3 codes.
 - `tools/data/iso4217.csv` — the 178 ISO 4217 currency codes, list one published 2026-01-01.
 
+#### Currencies (`org\iso`)
+- `ISO4217::XCG` (Caribbean guilder), `SLE` (Sierra Leonean leone), `ZWG` (Zimbabwe Gold) and `VED` (Venezuelan bolívar digital) — four currencies in circulation that the class did not declare. It kept `ANG`, `SLL` and `ZWL` without their replacements, so a transaction in any of the four went unrecognised.
+- The five withdrawn codes kept for historical data — `ANG`, `BGN`, `HRK`, `SLL`, `ZWL` — now say so in their docblock, and name their replacement where there is one.
+
 #### Conformance testing
+- `tests/org/iso/ISO4217Test` — checks every declared currency against `tools/data/iso4217.csv`, and enforces the rule the class had silently broken: a withdrawn code may be kept for historical data, but never without the code that replaced it.
 - `tests/org/unece/uncefact/PackageConformanceTest` — checks `PackageCode` and `PackageName` against `tools/data/uncefact-rec21.csv`: every code exists in Rec 21, every name matches the official wording, both classes declare the same constants, no value is duplicated. `PackageCode` is maintained by hand — one error in 108 entries did not justify a generator — so this test is what replaces one. It is what would have caught `PARCEL`, and it immediately surfaced two further wording drifts. Deliberate departures are declared in a `KNOWN_DEVIATIONS` list, which keeps the debt visible and bounded.
 
 #### Tooling
@@ -85,6 +90,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Moved the hand-written bilingual (en/fr) documentation from `docs/` to `wiki/`; the `docs/` directory is now reserved for the generated phpDocumentor site and is no longer versioned.
 
 ### Fixed
+- `isLocale()` in strict mode accepted neither `bh` (Bihari languages) nor `sh` (Serbo-Croatian), although both are valid and non-deprecated BCP 47 language subtags. BCP 47 takes its authority from the IANA Language Subtag Registry, a superset of ISO 639-1 that keeps collections and macrolanguages the ISO list omits. The two are now accepted through a narrow `BCP47_ONLY_LANGUAGES` exception; the five deprecated forms — `in`, `iw`, `ji`, `jw`, `mo` — stay rejected, and every other subtag of the tag is still validated.
+- Documentation of `UNM49`: the class claimed to carry M49 codes, but M49 assigns *numeric* codes only — `250` for France. Its 248 entries are the ISO 3166-1 alpha-3 column the UNSD publishes next to its own, making it the alpha-3 counterpart of `ISO3166_1` rather than a registry of its own. The library's actual M49 registry is `UNM49Numeric`. Values are unchanged and match the UNSD table exactly.
 - **`PackageCode::PARCEL` — `'PA'` → `'PC'`.** In Rec 21 Rev 12, `PA` is the **packet**; the parcel is `PC`. The class merged the two and had no `PACKET` constant, so `PackageCode::getName('PA')` answered `Parcel` and no code resolved to a packet. **Breaking**: a stored `'PA'` meant as a parcel must be migrated to `'PC'`.
 - `PackageName::MATCH_BOX` — `'Match Box'` → `'Matchbox'`, and `PackageName::PALLET_SHRINK_WRAPPED` — `'Pallet, shrink, wrapped'` → `'Pallet, shrinkwrapped'`, to match the official wording.
 - `unitCodeName()` no longer has to arbitrate between the two families: correcting the codes against the official dataset removed the only two collisions instead of resolving them. `PT` and `DB` collided solely because `MeasureCode` declared them wrongly — in Rec 20 they are a pint and a dry pound, never a Point nor a Decibel. `MeasureCode` and `PackageCode` now share no value, which a test pins.
