@@ -46,6 +46,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 #### UN/CEFACT units of measure (`org\unece\uncefact`)
 - Density units: `MeasureCode::KILOGRAM_PER_CUBIC_METER` (`KMQ`), `MeasureName::KILOGRAM_PER_CUBIC_METER` (`Kilogram per cubic metre`) and `MeasureSymbol::KILOGRAM_PER_CUBIC_METER` (`kg/m³`)
+- `org\unece\uncefact\helpers\unitCodeName` — resolves the official name of a unit code against both families, measures (Rec. 20) first and packages (Rec. 21) as a fallback; returns `null` for a `null`, unknown or wrongly-cased code. The two families are flattened into a single name: callers that must tell a unit that measures from a unit that merely holds should ask `MeasureCode::getName()` directly. `PT` (Point / Pot) and `DB` (Decibel / Crate, multiple layer, wooden) belong to both families and resolve to the measure name.
 
 #### Tooling
 - `tools/generate-unm49-numeric.php` — maintenance script to regenerate `UNM49Numeric` from a curated dataset (outside composer autoload)
