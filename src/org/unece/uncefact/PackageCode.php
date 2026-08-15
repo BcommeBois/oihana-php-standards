@@ -12,7 +12,6 @@ use oihana\reflect\traits\ConstantsTrait;
  *
  * For an exhaustive list and official documentation, please consult:
  * @see https://unece.org/trade/uncefact/cl-recommendations
- * ```
  */
 class PackageCode
 {
